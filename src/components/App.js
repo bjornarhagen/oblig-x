@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import logo from './logo.svg';
+import Launches from "./Launches";
 import "../css/App.css";
 
 class App extends Component {
@@ -24,6 +24,7 @@ class App extends Component {
       <div>
         <h1>{this.state.greeting}</h1>
         <Summary handler={this.summaryHandler} />
+        <Launches />
       </div>
     );
   }
