@@ -24,14 +24,6 @@ class GlobalFooter extends Component {
             SpaceX REST API
           </a>
         </p>
-        <nav>
-          <a className="screen-reader-text" href="#header">
-            Go back up to navigation
-          </a>
-          <a className="screen-reader-text" href="#main">
-            Go back up to content
-          </a>
-        </nav>
       </React.Fragment>
     );
   }

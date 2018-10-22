@@ -5,10 +5,10 @@ class GlobalNavigation extends Component {
   render() {
     return (
       <nav>
-        <a className="screen-reader-text" href="#main">
+        <a className="skip-to-link" href="#main">
           Skip to content
         </a>
-        <a className="screen-reader-text" href="#footer">
+        <a className="skip-to-link" href="#footer">
           Skip to footer
         </a>
         <img src={logo} className="App-logo" alt="logo" />
