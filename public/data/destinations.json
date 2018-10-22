@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "region": "Norway, Oslo",
+    "planet": "Earth"
+  },
+  {
+    "id": 2,
+    "region": "Norway, Halden",
+    "planet": "Earth"
+  },
+  {
+    "id": 3,
+    "region": "Cydonia",
+    "planet": "Mars"
+  }
+]
