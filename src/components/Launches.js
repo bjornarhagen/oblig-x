@@ -51,12 +51,14 @@ class Launches extends Component {
               <th>Rocket</th>
             </tr>
           </thead>
-          {this.state.launchesUpcoming.map(launch => (
-            <tr key={launch.flight_number}>
-              <td>{launch.mission_name}</td>
-              <td>{launch.rocket.rocket_name}</td>
-            </tr>
-          ))}
+          <tbody>
+            {this.state.launchesUpcoming.map(launch => (
+              <tr key={launch.flight_number}>
+                <td>{launch.mission_name}</td>
+                <td>{launch.rocket.rocket_name}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
         <h3>Past</h3>
         <button onClick={this.getLaunchesPast}>Load past launches</button>
@@ -67,12 +69,14 @@ class Launches extends Component {
               <th>Rocket</th>
             </tr>
           </thead>
-          {this.state.launchesPast.map(launch => (
-            <tr key={launch.flight_number}>
-              <td>{launch.mission_name}</td>
-              <td>{launch.rocket.rocket_name}</td>
-            </tr>
-          ))}
+          <tbody>
+            {this.state.launchesPast.map(launch => (
+              <tr key={launch.flight_number}>
+                <td>{launch.mission_name}</td>
+                <td>{launch.rocket.rocket_name}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </React.Fragment>
     );

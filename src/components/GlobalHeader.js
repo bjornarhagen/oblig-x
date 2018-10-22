@@ -6,7 +6,7 @@ class GlobalHeader extends Component {
     return (
       <React.Fragment>
         <GlobalNavigation />
-        <h1>Hello</h1>
+        <h1>Header</h1>
       </React.Fragment>
     );
   }

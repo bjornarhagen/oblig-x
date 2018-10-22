@@ -10,7 +10,7 @@ class App extends Component {
     this.destinationsHandler = this.destinationsHandler.bind(this);
   }
   state = {
-    greeting: "Welcome to React"
+    greeting: "Good morning. Welcome to SpaceX",
     destination: null
   };
 
@@ -42,8 +42,8 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>{this.state.greeting}</h1>
-        <Summary handler={this.summaryHandler} />
+        <h2>{this.state.greeting}</h2>
+
         <Summary
           handler={this.summaryHandler}
           destination={this.state.destination}
