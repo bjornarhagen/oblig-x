@@ -1,5 +1,6 @@
 body {
   background-color: #282c34;
+  background-color: red;
   color: #fff;
 }
 
@@ -17,4 +18,10 @@ a {
 .skip-to-link:focus {
   position: relative;
   opacity: 1;
+}
+
+table tr:hover {
+  cursor: pointer;
+  color: #00ffff;
+  background-color: #000;
 }
