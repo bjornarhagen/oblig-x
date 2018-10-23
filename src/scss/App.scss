@@ -1,27 +1,31 @@
+@import "config/variables.scss";
+
 body {
-  background-color: #282c34;
-  background-color: red;
-  color: #fff;
+  background-color: $color-bg;
+  color: $color-fg;
 }
 
 a {
-  color: #00ffff;
+  color: $color-links;
 }
 
 .skip-to-link {
   position: absolute;
   opacity: 0;
   padding: 5px 10px;
-  background-color: #000;
-}
+  color: $color-hc-fg;
+  background-color: $color-hc-bg;
 
 .skip-to-link:focus {
   position: relative;
   opacity: 1;
 }
 
-table tr:hover {
+table tr {
   cursor: pointer;
-  color: #00ffff;
-  background-color: #000;
+
+  &:hover {
+    color: $color-primary-black;
+    background-color: $color-primary;
+  }
 }

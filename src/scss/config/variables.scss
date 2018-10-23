@@ -1,0 +1,61 @@
+// Colors
+$color-red: #f52c1e;
+$color-orange: #ebb03b;
+$color-yellow: #fce30a;
+$color-blue: #5871ce;
+$color-green: #58d39d;
+
+$color-gray1: #252726;
+$color-gray2: #3f3840;
+$color-gray3: #676d78;
+$color-gray4: #8f949f;
+$color-gray5: #c4c6cc;
+$color-gray6: #f0f1f0;
+
+$color-light: $color-gray6;
+$color-dark: $color-gray1;
+
+// Brand colors
+$color-primary: #eb583b;
+$color-primary-white: lighten($color-primary, 30%);
+$color-primary-light: lighten($color-primary, 10%);
+$color-primary-black: darken($color-primary, 45%);
+$color-primary-dark: darken($color-primary, 10%);
+$color-accent: $color-blue;
+$color-accent-white: lighten($color-accent, 30%);
+$color-accent-light: lighten($color-accent, 10%);
+$color-accent-black: darken($color-accent, 45%);
+$color-accent-dark: darken($color-accent, 10%);
+$color-error: $color-red;
+$color-error-white: lighten($color-error, 30%);
+$color-error-light: lighten($color-error, 10%);
+$color-error-black: darken($color-error, 45%);
+$color-error-dark: darken($color-error, 10%);
+$color-warning: $color-orange;
+$color-warning-white: lighten($color-warning, 30%);
+$color-warning-light: lighten($color-warning, 10%);
+$color-warning-black: darken($color-warning, 45%);
+$color-warning-dark: darken($color-warning, 10%);
+$color-success: $color-green;
+$color-success-white: lighten($color-success, 30%);
+$color-success-light: lighten($color-success, 10%);
+$color-success-black: darken($color-success, 45%);
+$color-success-dark: darken($color-success, 10%);
+$color-info: $color-gray4;
+$color-info-white: $color-gray6;
+$color-success-light: lighten($color-success, 10%);
+$color-info-black: $color-gray1;
+$color-success-dark: darken($color-success, 10%);
+
+// Site elements colors
+$color-bg: $color-light;
+$color-fg: $color-dark;
+$color-hc-fg: #000;
+$color-hc-bg: #fff;
+$color-links: $color-accent-black;
+
+// Typography
+
+// Structure
+
+// Other
