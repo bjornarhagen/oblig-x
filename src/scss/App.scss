@@ -6,13 +6,53 @@ body {
   color: $color-fg;
 }
 
+
 a {
+  @include transition("color", 250ms);
+  position: relative;
   color: $color-links;
+  text-decoration: none;
+
+  &:after {
+    @include transition("width", 350ms);
+    content: " ";
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 1px;
+    background-color: $color-links-hover-fg;
+  }
+
+  &:focus,
+  &:hover {
+    color: $color-links-hover-fg;
+    background-color: $color-links-hover-bg;
+
+    &:after {
+      left: 0;
+      right: auto;
+      width: 100%;
+    }
+  }
+
+  &:focus {
+    outline: $color-links-hover-fg auto 2px;
+  }
+
+  // Remove the fancy effect on buttons and skip-to-links
+  &.button:after,
+  &.skip-to-link:after {
+    content: none;
+    display: none;
+  }
 }
 
 .skip-to-link {
   display: block;
   position: absolute;
+  left: -100vw;
   opacity: 0;
   padding: 5px 10px;
   color: $color-hc-fg;
@@ -27,9 +67,13 @@ a {
   padding: 0.25em 0.5em;
   margin: 0.5em;
   word-break: break-all;
+  z-index: 999;
 
   &:focus {
     opacity: 1;
+    left: 0;
+    color: $color-hc-fg;
+    background-color: $color-hc-bg;
   }
 }
 
