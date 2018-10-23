@@ -1,18 +1,19 @@
 @import "_config/variables.scss";
 @import "_config/mixins.scss";
 
+html {
+  font-size: #{$base}px;
+}
+
 body {
   background-color: $color-bg;
   color: $color-copy;
-}
+  font-size: $font-size;
+  line-height: $line-height;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $color-headings;
+  @media screen and (min-width: 40em) {
+    font-size: $font-size-desktop;
+  }
 }
 
 a {
@@ -93,5 +94,7 @@ table tr {
     background-color: $color-primary;
   }
 }
+
+@import "_modules/typography.scss";
 
 @import "_config/a11y-testing.scss";

@@ -62,6 +62,11 @@ $color-links-hover-fg: $color-primary-dark;
 $color-links-hover-bg: #fff;
 
 // Typography
+$base: 16;
+$ratio: 1.2;
+$font-size: 1em;
+$font-size-desktop: 1.2em;
+$line-height: $ratio*$ratio*$ratio;
 
 // Structure
 
