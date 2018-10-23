@@ -1,0 +1,21 @@
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin transition(
+  $properties,
+  $duration: "250ms",
+  $timing_function: cubic-bezier(0.4, 0, 0.2, 1)
+) {
+  transition-property: unquote($properties);
+  transition-duration: unquote($duration);
+  transition-timing-function: $timing_function;
+}
