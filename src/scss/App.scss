@@ -1,5 +1,5 @@
-@import "config/variables.scss";
-@import "config/mixins.scss";
+@import "_config/variables.scss";
+@import "_config/mixins.scss";
 
 body {
   background-color: $color-bg;
@@ -94,4 +94,4 @@ table tr {
   }
 }
 
-@import "config/a11y-testing.scss";
+@import "_config/a11y-testing.scss";
