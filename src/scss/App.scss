@@ -3,9 +3,17 @@
 
 body {
   background-color: $color-bg;
-  color: $color-fg;
+  color: $color-copy;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-headings;
+}
 
 a {
   @include transition("color", 250ms);
