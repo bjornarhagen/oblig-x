@@ -10,6 +10,8 @@ body {
   color: $color-copy;
   font-size: $font-size;
   line-height: $line-height;
+  font-family:$font-copy-family;
+  font-weight:$font-copy-weight;
 
   @media screen and (min-width: 40em) {
     font-size: $font-size-desktop;
