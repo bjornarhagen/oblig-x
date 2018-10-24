@@ -100,3 +100,13 @@ table tr {
 @import "_modules/typography.scss";
 
 @import "_config/a11y-testing.scss";
+
+#steps {
+  .step {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
