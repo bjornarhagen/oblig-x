@@ -1,17 +1,60 @@
 [
   {
     "id": 1,
-    "region": "Norway, Oslo",
-    "planet": "Earth"
+    "planet": {
+      "name": "Earth",
+      "image": "/images/planets/earth.svg",
+      "gravity": 1
+    },
+    "launchpads": [],
+    "moons": ["Moon"]
   },
   {
     "id": 2,
-    "region": "Norway, Halden",
-    "planet": "Earth"
+    "planet": {
+      "name": "Mars",
+      "image": "/images/planets/mars.svg",
+      "gravity": 0.8
+    },
+    "launchpads": ["Cydonia", "Lorem", "Ipsum", "Dolor sit", "Amet"],
+    "moons": ["Phobos", "Deimos"]
   },
   {
     "id": 3,
-    "region": "Cydonia",
-    "planet": "Mars"
+    "planet": {
+      "name": "Jupiter",
+      "image": "/images/planets/jupiter.svg",
+      "gravity": 3
+    },
+    "launchpads": ["Ipsum", "Dolor sit", "Amet", "Lorem"],
+    "moons": ["Io", "Europa", "Ganymede", "Callisto"]
+  },
+  {
+    "id": 4,
+    "planet": {
+      "name": "Uranus",
+      "image": "/images/planets/uranus.svg",
+      "gravity": 3
+    },
+    "launchpads": ["Dolor sit", "Amet", "Lorem", "Ipsum"],
+    "moons": ["Miranda", "Ariel", "Umbriel", "Titania", "Oberon"]
+  },
+  {
+    "id": 5,
+    "planet": {
+      "name": "Saturn",
+      "image": "/images/planets/saturn.svg",
+      "gravity": 5
+    },
+    "launchpads": ["Amet", "Lorem", "Ipsum", "Dolor sit"],
+    "moons": [
+      "Mimas",
+      "Enceladus",
+      "Tethys",
+      "Dione",
+      "Rhea",
+      "Titan",
+      "Iapetus"
+    ]
   }
 ]
