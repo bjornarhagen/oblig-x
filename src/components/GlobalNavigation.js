@@ -11,7 +11,7 @@ class GlobalNavigation extends Component {
         <a className="skip-to-link" href="#footer">
           Skip to footer
         </a>
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="SpaceX logo" />
         <ul>
           <a href="#1">link 1</a>
           <a href="#2">link 2</a>
