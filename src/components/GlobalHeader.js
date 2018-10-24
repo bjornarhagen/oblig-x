@@ -6,7 +6,8 @@ class GlobalHeader extends Component {
     return (
       <React.Fragment>
         <GlobalNavigation />
-        <h1>Header</h1>
+        <h1>SpaceX - Go beyond</h1>
+        <p>Good morning. Welcome to SpaceX</p>
       </React.Fragment>
     );
   }
