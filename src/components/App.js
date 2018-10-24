@@ -1,26 +1,25 @@
 import React, { Component } from "react";
 import Launches from "./Launches";
 import Destinations from "./Destinations";
+import StepButton from "./StepButton";
 import "../css/App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.summaryHandler = this.summaryHandler.bind(this);
     this.destinationsHandler = this.destinationsHandler.bind(this);
+
+    this.stepsHandler = this.stepsHandler.bind(this);
+    this.stepMin = 1;
+    this.stepMax = 6;
+
+    this.defaultNextButtonText = "Neste steg";
+    this.defaultPreviousButtonText = "Forrige steg";
   }
   state = {
-    greeting: "Good morning. Welcome to SpaceX",
-    destination: null
+    destination: null,
+    step: 1
   };
-
-  summaryHandler(e) {
-    e.preventDefault();
-
-    this.setState({
-      greeting: e.target.innerHTML
-    });
-  }
 
   destinationsHandler(destination) {
     // If current destination is the same as the new one: Reset the destination
@@ -39,52 +38,107 @@ class App extends Component {
     }
   }
 
-  render() {
-    return (
-      <React.Fragment>
-        <h2>{this.state.greeting}</h2>
+  stepsHandler(step) {
+    if (step < this.stepMin) {
+      step = this.stepMin;
+    } else if (step > this.stepMax) {
+      step = this.stepMax;
+    }
 
-        <Summary
-          handler={this.summaryHandler}
-          destination={this.state.destination}
-        />
-        <Destinations handler={this.destinationsHandler} />
-        <Launches />
-      </React.Fragment>
-    );
+    this.setState({
+      step: step
+    });
+
+    const elSteps = document.querySelectorAll("#steps .step");
+    for (let i = 0; i < elSteps.length; i++) {
+      const elStep = elSteps[i];
+      elStep.classList.remove("active");
+    }
+
+    document.querySelector("#step-" + step).classList.add("active");
   }
-}
 
-class Summary extends Component {
   render() {
     return (
-      <div>
-        <h2 onClick={this.summaryHandler}>
-          {(() => {
-            if (this.props.destination != null) {
-              return (
-                "Step 1: Destination (" +
-                this.props.destination.planet +
-                ": " +
-                this.props.destination.region +
-                ")"
-              );
-            } else {
-              return "Step 1: Pick your destination";
-            }
-          })()}
-        </h2>
-        <h2 onClick={this.props.handler}>
-          Step 2: Plan your flight (date and time)
-        </h2>
-        <h2 onClick={this.props.handler}>Step 3: Choose your ride</h2>
-        <h2 onClick={this.props.handler}>
-          Step 4: Fill out info (luggage, seat, room)
-        </h2>
-        <h2 onClick={this.props.handler}>Step 5: Pay</h2>
-        <h2 onClick={this.props.handler}>
-          Step 6: Read about partners (hotels & activities)
-        </h2>
+      <div id="steps">
+        <h2>Reise</h2>
+        <h3>Step {this.state.step}</h3>
+        <section id="step-1" className="step active">
+          <h4>Hvor vil du dra?</h4>
+          <Destinations handler={this.destinationsHandler} />
+          <StepButton
+            handler={this.stepsHandler}
+            step={this.state.step}
+            direction="next"
+            text={this.defaultNextButtonText}
+          />
+        </section>
+        <section id="step-2" className="step">
+          <h4>Hvor drar du fra?</h4>
+          <Launches />
+          <StepButton
+            handler={this.stepsHandler}
+            step={this.state.step}
+            direction="previous"
+            text={this.defaultPreviousButtonText}
+          />
+          <StepButton
+            handler={this.stepsHandler}
+            step={this.state.step}
+            direction="next"
+            text={this.defaultNextButtonText}
+          />
+        </section>
+        <section id="step-3" className="step">
+          <StepButton
+            handler={this.stepsHandler}
+            step={this.state.step}
+            direction="previous"
+            text={this.defaultPreviousButtonText}
+          />
+          <StepButton
+            handler={this.stepsHandler}
+            step={this.state.step}
+            direction="next"
+            text={this.defaultNextButtonText}
+          />
+        </section>
+        <section id="step-4" className="step">
+          <StepButton
+            handler={this.stepsHandler}
+            step={this.state.step}
+            direction="previous"
+            text={this.defaultPreviousButtonText}
+          />
+          <StepButton
+            handler={this.stepsHandler}
+            step={this.state.step}
+            direction="next"
+            text={this.defaultNextButtonText}
+          />
+        </section>
+        <section id="step-5" className="step">
+          <StepButton
+            handler={this.stepsHandler}
+            step={this.state.step}
+            direction="previous"
+            text={this.defaultPreviousButtonText}
+          />
+          <StepButton
+            handler={this.stepsHandler}
+            step={this.state.step}
+            direction="next"
+            text={this.defaultNextButtonText}
+          />
+        </section>
+        <section id="step-6" className="step">
+          <StepButton
+            handler={this.stepsHandler}
+            step={this.state.step}
+            direction="previous"
+            text={this.defaultPreviousButtonText}
+          />
+        </section>
       </div>
     );
   }
