@@ -14,23 +14,23 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: $line-height;
-    margin-top: #{$ratio/2}em;
-    margin-bottom: #{$ratio/4}em;
-    font-family: $font-headings-family;
-    font-weight: $font-headings-weight;
+  line-height: $line-height;
+  margin-top: #{$ratio/2}em;
+  margin-bottom: #{$ratio/4}em;
+  font-family: $font-headings-family;
+  font-weight: $font-headings-weight;
 
-    + p {
-        margin-top: 0;
-    }
+  + p {
+    margin-top: 0;
+  }
 }
 
 // Remove margin-top when headings come after each other
-h1+h2,
-h2+h3,
-h3+h4,
-h4+h5 {
-    margin-top: 0;
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5 {
+  margin-top: 0;
 }
 
 h5,
@@ -39,41 +39,41 @@ h6 {
 }
 
 h1 {
-    font-size: #{$ratio*$ratio*$ratio*$ratio*$ratio}em;
+  font-size: #{$ratio * $ratio * $ratio * $ratio * $ratio}em;
 }
 
 h2 {
-    font-size: #{$ratio*$ratio*$ratio*$ratio}em;
+  font-size: #{$ratio * $ratio * $ratio * $ratio}em;
 }
 
 h3 {
-    font-size: #{$ratio*$ratio*$ratio}em;
+  font-size: #{$ratio * $ratio * $ratio}em;
 }
 
 h4 {
-    font-size: #{$ratio*$ratio}em;
+  font-size: #{$ratio * $ratio}em;
 }
 
 h5 {
-    font-size: #{$ratio}em;
+  font-size: #{$ratio}em;
 }
 
 h6 {
-    font-size: 1em;
+  font-size: 1em;
 }
 
-P {
-    line-height: $line-height;
-    margin-top: #{$ratio/2}em;
-    margin-bottom: #{$ratio/2}em;
-    font-weight: $font-copy-weight;
+p {
+  line-height: $line-height;
+  margin-top: #{$ratio/2}em;
+  margin-bottom: #{$ratio/2}em;
+  font-weight: $font-copy-weight;
 
-    + h1,
-    + h2,
-    + h3,
-    + h4,
-    + h5,
-    + h6 {
-        margin-top: #{$ratio}em;
-    }
+  + h1,
+  + h2,
+  + h3,
+  + h4,
+  + h5,
+  + h6 {
+    margin-top: #{$ratio}em;
+  }
 }
