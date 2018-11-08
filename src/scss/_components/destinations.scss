@@ -77,9 +77,95 @@
         }
 
         &:active {
-          @include transition("transform", 50ms);
-          transform: scale(1);
+        @include transition("transform", 50ms);
+        transform: scale(1);
+      }
+    }
+  }
+
+  .planet-info-wrapper {
+    display: block;
+    margin: 0 auto;
+    padding: #{$ratio}em #{$ratio * 2}em;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .planet-info {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: #{$ratio}em;
+    grid-template-areas:
+      "pg1 pg1 pg1 pg1 pg1 pg1 pg1 pg1 pgm pgm pgm pgm"
+      "pst pst pst pst pst pst pst pst pst pst pst pst"
+      "pg2 pg2 pg2 pg2 pg2 pg2 pg2 pg2 pg2 pg2 pg2 pg2";
+
+    @media screen and (min-width: $size-l) {
+      grid-template-areas:
+        "pg1 pg1 pg1 pg1 pg1 pg1 pg1 pg1 pgm pgm pgm pgm"
+        "pst pst pst pst pst pst pg2 pg2 pg2 pg2 pg2 pg2";
+    }
+  }
+
+  .planet-info-tab {
+    // padding: 0 #{$ratio/4}em;
+
+    &.planet-general-1 {
+      grid-area: pg1;
+    }
+
+    &.planet-general-2 {
+      grid-area: pg2;
+    }
+
+    &.planet-moons {
+      grid-area: pgm;
+    }
+
+    &.planet-specs {
+      padding: 0;
+      grid-area: pst;
+    }
+  }
+
+  .planet-specs {
+    h6 {
+      // padding: 0 #{$ratio/4}em;
+    }
+
+    table {
+      width: 100%;
+
+      tr {
+        border-bottom: 1px solid $color-gray7;
+
+        &:last-child {
+          border-bottom: 0;
         }
+      }
+
+      th,
+      td {
+        font-family: $font-mono-family;
+        font-weight: $font-mono-weight;
+        line-height: 1 + $ratio/4;
+      }
+
+      th {
+        text-align: left;
+        border-right: 1px solid $color-gray7;
+        // padding: #{$ratio/8}em #{$ratio/4}em #{$ratio/8}em #{$ratio}em;
+
+        &:only-child {
+          padding: #{$ratio/4}em 0 #{$ratio/8}em;
+          line-height: $ratio;
+          font-weight: $font-mono-weight-bold;
+        }
+      }
+
+      td {
+        text-align: right;
+        // padding: #{$ratio/8}em #{$ratio/4}em;
       }
     }
   }

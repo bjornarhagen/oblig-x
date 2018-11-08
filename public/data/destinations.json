@@ -4,47 +4,158 @@
     "planet": {
       "name": "Earth",
       "image": "/images/planets/earth.svg",
-      "gravity": 1
+      "orbitalCharacteristics": {
+        "period": "",
+        "speed": "",
+        "Satellites": ""
+      },
+      "physicalCharacteristics": {
+        "surfaceTemp": {
+          "min": "",
+          "mean": "",
+          "max": ""
+        },
+        "gravity": 1,
+        "surfaceArea": "",
+        "radius": "",
+        "volume": "",
+        "mass": ""
+      },
+      "atmosphere": {
+        "surfacePressure": ""
+      }
     },
     "launchpads": [],
-    "moons": ["Moon"]
+    "moons": ["Moon"],
+    "infoText": [
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod?</p>",
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod? </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod? </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod?</p>"
+    ]
   },
   {
     "id": 2,
     "planet": {
       "name": "Mars",
       "image": "/images/planets/mars.svg",
-      "gravity": 0.8
+      "orbitalCharacteristics": {
+        "period": "686.971 d",
+        "speed": "24.007 km/s",
+        "Satellites": "2"
+      },
+      "physicalCharacteristics": {
+        "surfaceTemp": {
+          "min": "−143 °C",
+          "mean": "−63 °C",
+          "max": "35 °C"
+        },
+        "gravity": "0.376 G",
+        "surfaceArea": "144798500 km2",
+        "radius": "0.533 Earths",
+        "volume": "1.6318×1011 km3",
+        "mass": "6.4171×1023 kg"
+      },
+      "atmosphere": {
+        "surfacePressure": "0.636 kPa"
+      }
     },
     "launchpads": ["Cydonia", "Lorem", "Ipsum", "Dolor sit", "Amet"],
-    "moons": ["Phobos", "Deimos"]
+    "moons": ["Phobos", "Deimos"],
+    "infoText": [
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod?</p>",
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod? </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod? </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod?</p>"
+    ]
   },
   {
     "id": 3,
     "planet": {
       "name": "Jupiter",
       "image": "/images/planets/jupiter.svg",
-      "gravity": 3
+      "orbitalCharacteristics": {
+        "period": "",
+        "speed": "",
+        "Satellites": ""
+      },
+      "physicalCharacteristics": {
+        "surfaceTemp": {
+          "min": "",
+          "mean": "",
+          "max": ""
+        },
+        "gravity": 1,
+        "surfaceArea": "",
+        "radius": "",
+        "volume": "",
+        "mass": ""
+      },
+      "atmosphere": {
+        "surfacePressure": ""
+      }
     },
     "launchpads": ["Ipsum", "Dolor sit", "Amet", "Lorem"],
-    "moons": ["Io", "Europa", "Ganymede", "Callisto"]
+    "moons": ["Io", "Europa", "Ganymede", "Callisto"],
+    "infoText": [
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod?</p>",
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod? </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod? </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod?</p>"
+    ]
   },
   {
     "id": 4,
     "planet": {
       "name": "Uranus",
       "image": "/images/planets/uranus.svg",
-      "gravity": 3
+      "orbitalCharacteristics": {
+        "period": "",
+        "speed": "",
+        "Satellites": ""
+      },
+      "physicalCharacteristics": {
+        "surfaceTemp": {
+          "min": "",
+          "mean": "",
+          "max": ""
+        },
+        "gravity": 1,
+        "surfaceArea": "",
+        "radius": "",
+        "volume": "",
+        "mass": ""
+      },
+      "atmosphere": {
+        "surfacePressure": ""
+      }
     },
     "launchpads": ["Dolor sit", "Amet", "Lorem", "Ipsum"],
-    "moons": ["Miranda", "Ariel", "Umbriel", "Titania", "Oberon"]
+    "moons": ["Miranda", "Ariel", "Umbriel", "Titania", "Oberon"],
+    "infoText": [
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod?</p>",
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod? </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod? </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod?</p>"
+    ]
   },
   {
     "id": 5,
     "planet": {
       "name": "Saturn",
       "image": "/images/planets/saturn.svg",
-      "gravity": 5
+      "orbitalCharacteristics": {
+        "period": "",
+        "speed": "",
+        "Satellites": ""
+      },
+      "physicalCharacteristics": {
+        "surfaceTemp": {
+          "min": "",
+          "mean": "",
+          "max": ""
+        },
+        "gravity": 1,
+        "surfaceArea": "",
+        "radius": "",
+        "volume": "",
+        "mass": ""
+      },
+      "atmosphere": {
+        "surfacePressure": ""
+      }
     },
     "launchpads": ["Amet", "Lorem", "Ipsum", "Dolor sit"],
     "moons": [
@@ -55,6 +166,10 @@
       "Rhea",
       "Titan",
       "Iapetus"
+    ],
+    "infoText": [
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod?</p>",
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod? </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod? </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas tempore numquam tempora unde reiciendis aliquid, natus ea veritatis labore commodi magnam hic doloribus quasi dolores maiores obcaecati, odio quod?</p>"
     ]
   }
 ]
