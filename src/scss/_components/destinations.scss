@@ -2,81 +2,98 @@
 @import "../_config/mixins.scss";
 
 #destinations {
-  max-width: 100%;
-  width: 40em;
-  display: block;
-  margin: 0 auto;
-
   .planets {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding: 3em;
+    &-outer {
+      background-color: #000;
+      background-image: radial-gradient(
+          2px 2px at 20px 30px,
+          #eee,
+          rgba(0, 0, 0, 0)
+        ),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
 
-    .planet {
-      @include transition("transform", 250ms);
-      display: none;
-      flex-direction: column-reverse;
-      flex-shrink: 0;
-      text-align: center;
+    &-inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      overflow: hidden;
+      max-width: 100%;
+      // width: $size-m;
+      margin: 0 auto;
+      padding: #{$ratio * 2}em;
+    }
+  }
+
+  .planet {
+    @include transition("transform, opacity", 250ms);
+    display: none;
+    flex-direction: column-reverse;
+    flex-shrink: 0;
+    text-align: center;
+    width: 100%;
+    transform: scale(1);
+    padding: #{$ratio}em;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    &-name {
+      position: absolute;
+      bottom: -1em;
+      left: 0;
+      right: 0;
       width: 100%;
-      transform: scale(1);
-      padding: 1em;
-      background-color: transparent;
-      border: 0;
-      outline: 0;
-      cursor: pointer;
+    }
 
-      &-name {
-        position: absolute;
-        bottom: -1em;
-        left: 0;
-        right: 0;
-        width: 100%;
-      }
+    &.selected,
+    &.previous,
+    &.next {
+      display: flex;
+    }
 
-      &.selected,
-      &.previous,
-      &.next {
-        display: flex;
-      }
+    &.selected {
+      width: 50%;
+      order: 1;
+    }
 
-      &.selected {
-        width: 50%;
-        order: 1;
-      }
-
-      &.previous,
-      &.next {
-        width: 25%;
-        opacity: 0.5;
-
-        &:focus,
-        &:hover {
-          opacity: 0.75;
-        }
-      }
-
-      &.next {
-        order: 2;
-      }
-
-      &.previous {
-        order: 0;
-      }
+    &.previous,
+    &.next {
+      width: 25%;
+      opacity: 0.75;
 
       &:focus,
       &:hover {
-        transform: scale(1.1);
+        opacity: 0.9;
+      }
+    }
 
-        .planet-name {
-          text-decoration: underline;
-        }
+    &.next {
+      order: 2;
+    }
 
-        &:active {
+    &.previous {
+      order: 0;
+    }
+
+    &:focus,
+    &:hover {
+      transform: scale(1.1);
+
+      .planet-name {
+        text-decoration: underline;
+      }
+
+      &:active {
         @include transition("transform", 50ms);
         transform: scale(1);
       }

@@ -51,8 +51,12 @@ class Destinations extends Component {
   getDestinations() {
     axios({ method: "get", baseURL: "/data/", url: "destinations.json" })
       .then(destinations => {
-        this.setState({ destinations: destinations.data });
-        this.setDestination(this.state.destinations[this.state.destination]);
+        this.setState({
+          destination: destinations.data[0],
+          destinations: destinations.data
+        });
+
+        this.setDestination(this.state.destination);
       })
       .catch(function(error) {
         console.error(error);
@@ -97,21 +101,34 @@ class Destinations extends Component {
 
   render() {
     return (
-      <div id="destinations">
-        <div className="planets">
-          {this.state.destinations.map(destination => (
-            <button
-              className="planet"
-              key={destination.id}
-              onClick={() => this.setDestination(destination)}
-              aria-label={"Velg " + destination.planet.name}
-            >
-              <h5 className="planet-name">{destination.planet.name}</h5>
-              <img
-                src={destination.planet.image}
-                alt={"Bilde av planeten " + destination.planet.name}
-              />
-            </button>
+      <React.Fragment>
+        <button
+          className="modal-trigger"
+          type="button"
+          data-target="#destinations"
+        >
+          {this.state.destination.planet.name}
+        </button>
+        <div id="destinations" className="modal">
+          <div className="destinations-inner modal-inner">
+            <div className="planets-outer">
+              <div className="planets-inner">
+                {this.state.destinations.map(destination => (
+                  <button
+                    className="planet"
+                    key={destination.id}
+                    type="button"
+                    onClick={() => this.setDestination(destination)}
+                    aria-label={"Velg " + destination.planet.name}
+                  >
+                    <span className="planet-name">
+                      {destination.planet.name}
+                    </span>
+                    <img
+                      src={destination.planet.image}
+                      alt={"Bilde av planeten " + destination.planet.name}
+                    />
+                  </button>
                 ))}
               </div>
             </div>
