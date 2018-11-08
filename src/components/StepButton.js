@@ -19,6 +19,7 @@ class StepButton extends Component {
     return (
       <button
         className="continue"
+        type="button"
         onClick={() => {
           if (this.props.direction === "previous") {
             this.previousStep();
