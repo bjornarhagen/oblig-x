@@ -97,9 +97,6 @@ table tr {
   }
 }
 
-@import "_modules/typography.scss";
-
-@import "_config/a11y-testing.scss";
 
 #steps {
   .step {
@@ -110,3 +107,7 @@ table tr {
     }
   }
 }
+
+@import "_modules/typography.scss";
+@import "_modules/modals.scss";
+@import "_config/a11y-testing.scss";
