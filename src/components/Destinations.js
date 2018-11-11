@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+require("es6-promise").polyfill();
 require("../scss/_components/destinations.scss");
 
 class Destinations extends Component {
