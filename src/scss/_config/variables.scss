@@ -87,5 +87,8 @@ $font-mono-weight-light: 400;
 $font-mono-weight: $font-mono-weight-regular;
 
 // Structure
+$size-s: #{$ratio * 28}em;
+$size-m: #{$ratio * 38}em;
+$size-l: #{$ratio * 58}em;
 
 // Other
