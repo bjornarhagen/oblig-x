@@ -13,8 +13,8 @@ $color-gray5: #8f949f;
 $color-gray6: #c4c6cc;
 $color-gray7: #f0f1f0;
 
-$color-light: $color-gray7;
-$color-dark: $color-gray1;
+$color-light: #fff;
+$color-dark: #000;
 
 // Brand colors
 $color-primary: #eb583b;
@@ -49,7 +49,7 @@ $color-info-black: $color-gray1;
 $color-info-dark: $color-gray4;
 
 // Site elements colors
-$color-bg: #fff;
+$color-bg: $color-gray7;
 $color-hc-fg: #000;
 $color-hc-bg: #fff;
 
@@ -59,7 +59,7 @@ $color-copy2: $color-gray4;
 
 $color-links: $color-accent-dark;
 $color-links-hover-fg: $color-primary-dark;
-$color-links-hover-bg: #fff;
+$color-links-hover-bg: transparent;
 
 // Typography
 $base: 16;
