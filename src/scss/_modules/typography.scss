@@ -5,7 +5,7 @@ h1,
 h2,
 h3,
 h4 {
-    color: $color-headings;
+  color: $color-headings;
 }
 
 h1,
@@ -35,7 +35,7 @@ h4 + h5 {
 
 h5,
 h6 {
-    color: $color-copy;
+  color: $color-copy;
 }
 
 h1 {
@@ -76,4 +76,10 @@ p {
   + h6 {
     margin-top: #{$ratio}em;
   }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
 }

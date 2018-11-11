@@ -66,11 +66,25 @@ $base: 16;
 $ratio: 1.2;
 $font-size: 1em;
 $font-size-desktop: 1.2em;
-$line-height: $ratio*$ratio*$ratio;
-$font-headings-family: 'axia';
-$font-headings-weight: 700;
-$font-copy-family: 'axia';
-$font-copy-weight: 300;
+$line-height: $ratio * $ratio * $ratio;
+
+$font-headings-family: ibm-plex-mono, axia, sans-serif;
+$font-headings-weight-bold: 700;
+$font-headings-weight-regular: 700;
+$font-headings-weight-light: 700;
+$font-headings-weight: $font-headings-weight-regular;
+
+$font-copy-family: axia, sans-serif;
+$font-copy-weight-bold: 700;
+$font-copy-weight-regular: 400;
+$font-copy-weight-light: 300;
+$font-copy-weight: $font-copy-weight-light;
+
+$font-mono-family: ibm-plex-mono, axia, monospace;
+$font-mono-weight-bold: 700;
+$font-mono-weight-regular: 400;
+$font-mono-weight-light: 400;
+$font-mono-weight: $font-mono-weight-regular;
 
 // Structure
 
