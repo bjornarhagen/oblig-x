@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import "./js/polyfill-nodelist-foreach";
+
 import "./css/index.css";
 import App from "./components/App";
 import GlobalHeader from "./components/GlobalHeader";
