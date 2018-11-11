@@ -1,0 +1,40 @@
+@import "../_config/variables.scss";
+@import "../_config/mixins.scss";
+
+button,
+a.button,
+[type="submit"],
+[type="reset"] {
+  @include transition("border-color, color, background-color");
+  cursor: pointer;
+  display: inline-block;
+  padding: #{$ratio/2}em #{$ratio}em;
+  border-radius: 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: $font-mono-family;
+  font-weight: $font-mono-weight-bold;
+  border: 2px solid $color-info-light;
+  color: $color-info-black;
+  background-color: $color-info-light;
+
+  &:hover,
+  &:focus {
+    color: $color-info-white;
+    border-color: $color-info-dark;
+    background-color: $color-info-dark;
+  }
+
+  &.primary {
+    color: $color-primary-black;
+    border-color: $color-primary;
+    background-color: $color-primary;
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+      border-color: $color-primary;
+      background-color: rgba($color-primary-black, 0.5);
+    }
+  }
+}
