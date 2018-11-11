@@ -69,12 +69,11 @@ a {
 
 .skip-to-link {
   display: block;
-  position: absolute;
+  position: fixed;
   left: -100vw;
   opacity: 0;
-  padding: 5px 10px;
-  color: $color-hc-fg;
-  background-color: $color-hc-bg;
+  color: $color-hc-fg !important;
+  background-color: $color-hc-bg !important;
   outline: none;
   border: 0.1em solid $color-hc-fg;
   text-decoration: none;
@@ -82,8 +81,8 @@ a {
   font-size: 2em;
   line-height: 1;
   font-weight: 700;
-  padding: 0.25em 0.5em;
-  margin: 0.5em;
+  padding: #{$ratio/2}em #{$ratio}em;
+  margin: #{$ratio/2}em;
   word-break: break-all;
   z-index: 999;
 
