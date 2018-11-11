@@ -1,0 +1,223 @@
+@import "../_config/variables.scss";
+@import "../_config/mixins.scss";
+
+#nav {
+  position: sticky;
+  top: 0;
+  z-index: 11;
+  padding: #{$ratio/2}em #{$ratio}em;
+  font-family: $font-copy-family;
+  font-weight: $font-copy-weight-regular;
+  max-height: 100vh;
+  overflow-y: auto;
+  color: $color-accent-white;
+  background-color: $color-dark;
+
+  @media screen and (min-width: $size-m) {
+    overflow-y: visible;
+  }
+
+  .inner-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $size-m) {
+      flex-direction: row;
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+      max-width: $size-m;
+      justify-content: flex-end;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: $color-light;
+
+    span + .icon {
+      display: inline-block;
+      margin-left: #{$ratio/4}em;
+    }
+  }
+
+  svg {
+    fill: currentColor;
+    width: 1.5em;
+    height: 1.5em;
+    @include transition("fill", 250ms);
+  }
+
+  .icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    & + span {
+      display: inline-block;
+      margin-left: #{$ratio/4}em;
+    }
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+
+    @media screen and (min-width: $size-m) {
+      display: flex;
+      position: relative;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    &.links-primary {
+      order: 2;
+
+      @media screen and (min-width: $size-m) {
+        order: 0;
+        flex-grow: 1;
+      }
+    }
+
+    &.links-secondary {
+      order: 1;
+
+      @media screen and (min-width: $size-m) {
+        order: 0;
+        padding-left: #{$ratio * 2}em;
+      }
+    }
+
+    > li {
+      position: relative;
+
+      &:nth-child(n + 1) {
+        @media screen and (min-width: $size-m) {
+          padding-left: #{$ratio}em;
+        }
+      }
+
+      > a {
+        display: block;
+        text-align: center;
+        font-size: 2em;
+        margin-top: #{$ratio}em;
+
+        @media screen and (min-width: $size-m) {
+          margin-top: 0;
+          font-size: 1em;
+        }
+      }
+
+      > ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        @media screen and (min-width: $size-m) {
+          display: none;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          transform: translateX(35%);
+          background-color: $color-dark;
+          box-shadow: 0 1em 2em -1em rgba($color-accent, 0.1);
+        }
+
+        a {
+          @media screen and (min-width: $size-m) {
+            color: $color-light;
+
+            &:focus,
+            &:hover {
+              color: $color-primary-white;
+            }
+          }
+        }
+
+        > li {
+          padding: #{$ratio/2}em #{$ratio}em #{$ratio}em;
+
+          > .text {
+            text-align: center;
+            display: block;
+            font-family: $font-headings-family;
+            font-weight: $font-headings-weight;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: #{$ratio/2}em;
+          }
+
+          ul {
+            display: flex;
+            flex-direction: column;
+
+            li {
+              line-height: 1;
+              margin-top: #{$ratio/2}em;
+
+              a {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+
+      &:focus-within,
+      &:hover {
+        > a {
+          color: $color-primary-white;
+
+          svg {
+            fill: $color-primary-white;
+          }
+        }
+
+        > ul {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .nav-open {
+    display: inline-block;
+  }
+
+  .nav-close {
+    display: none;
+  }
+
+  .nav-open,
+  .nav-close {
+    @media screen and (min-width: $size-m) {
+      display: none;
+    }
+  }
+
+  &.show {
+    z-index: 13;
+
+    ul {
+      display: flex;
+    }
+
+    .nav-open {
+      display: none;
+    }
+
+    .nav-close {
+      display: inline-block;
+    }
+  }
+}
