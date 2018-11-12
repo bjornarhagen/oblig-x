@@ -1,0 +1,172 @@
+@import "../_config/variables.scss";
+@import "../_config/mixins.scss";
+
+.react-datepicker {
+  background-color: $color-light;
+  z-index: 13;
+  width: 100%;
+  max-width: $size-s;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &__portal {
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+    padding: 15vh #{$ratio/2}em #{$ratio/2}em;
+    background-color: rgba($color-dark, 0.65);
+    z-index: 12;
+    max-height: 100vh;
+    overflow-y: auto;
+
+    @media screen and (min-width: $size-s) {
+      padding: 15vh #{$ratio}em #{$ratio}em;
+    }
+
+    @media screen and (min-width: $size-m) {
+      align-content: center;
+      align-items: center;
+    }
+
+    &:hover {
+      background-color: rgba($color-dark, 0.6);
+    }
+  }
+
+  &__navigation {
+    color: $color-light;
+    border-color: $color-dark;
+    background-color: $color-dark;
+    width: 50%;
+    order: 1;
+  }
+
+  &__month-container {
+    order: 0;
+    width: 100%;
+  }
+
+  &__month,
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__month {
+    min-height: #{$ratio * 12.5}em;
+
+    @media screen and (min-width: $size-s) {
+      min-height: #{$ratio * 15}em;
+    }
+  }
+
+  &__header {
+    padding: 0 #{$ratio/2}em;
+    color: $color-light;
+    background-color: $color-dark;
+
+    @media screen and (min-width: $size-s) {
+      padding: 0 #{$ratio}em;
+    }
+  }
+
+  &__current-month {
+    font-family: $font-headings-family;
+    font-weight: $font-headings-weight;
+    padding: #{$ratio/2}rem;
+    font-size: #{$ratio * $ratio}em;
+    text-align: center;
+
+    @media screen and (min-width: $size-s) {
+      text-align: left;
+    }
+  }
+
+  &__week,
+  &__day-names {
+    display: flex;
+    justify-content: space-between;
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  &__week {
+    padding: 0 #{$ratio/2}em;
+
+    @media screen and (min-width: $size-s) {
+      padding: 0 #{$ratio}em;
+    }
+  }
+
+  &__day-names {
+    font-family: $font-mono-family;
+    font-weight: $font-mono-weight-bold;
+
+    .react-datepicker__day-name:first-child {
+      font-weight: $font-mono-weight-light;
+    }
+  }
+
+  &__day-name,
+  &__week-number,
+  &__day {
+    padding: #{$ratio/4}em;
+
+    @media screen and (min-width: $size-s) {
+      padding: #{$ratio/2}em;
+    }
+  }
+
+  &__week-number {
+    color: $color-copy2;
+    font-weight: $font-copy-weight-light;
+  }
+
+  &__day {
+    color: $color-copy;
+    font-family: $font-mono-family;
+    font-weight: $font-mono-weight-regular;
+
+    &--today,
+    &--outside-month,
+    &.travel-leave-highlight,
+    &.travel-return-highlight {
+      font-weight: $font-mono-weight-bold;
+    }
+
+    &--today {
+      color: $color-primary-black;
+    }
+
+    &--outside-month {
+      color: $color-copy3;
+    }
+
+    &.travel-leave-highlight {
+      color: $color-warning-dark;
+    }
+
+    &.travel-return-highlight {
+      color: $color-success-dark;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-primary-dark;
+      background-color: $color-primary-white;
+    }
+  }
+}
