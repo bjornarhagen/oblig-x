@@ -19,7 +19,9 @@
 
   .inner-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
     @media screen and (min-width: $size-m) {
       flex-direction: row;
@@ -66,10 +68,12 @@
   .links {
     display: none;
     flex-direction: column;
+    width: 100%;
 
     @media screen and (min-width: $size-m) {
       display: flex;
       position: relative;
+      width: auto;
       flex-direction: row;
       justify-content: flex-end;
     }
@@ -200,6 +204,10 @@
 
   .nav-open,
   .nav-close {
+    color: $color-light;
+    border: 0;
+    background-color: transparent;
+
     @media screen and (min-width: $size-m) {
       display: none;
     }

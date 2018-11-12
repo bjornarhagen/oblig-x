@@ -4,6 +4,8 @@ import SVG from "react-inlinesvg";
 
 import logo from "../images/logo.svg";
 import iconUser from "../images/icons/space-astronaut.svg";
+import iconOpen from "../images/icons/navigation-menu.svg";
+import iconClose from "../images/icons/remove.svg";
 import iconBaggage from "../images/icons/baggage.svg";
 import iconSpaceport from "../images/icons/space-rocket-launch.svg";
 import iconSeatedPerson from "../images/icons/seat-regular.svg";
@@ -30,9 +32,17 @@ class GlobalNavigation extends Component {
           <img src={logo} className="App-logo" alt="SpaceX logo" />
         </a>
         <button className="nav-open modal-trigger" data-target="#nav">
-          Åpne
+          <SVG src={iconOpen} className="icon">
+            <img src="yourfallback.jpg" alt="fallback image" />
+          </SVG>
+          <span>Åpne</span>
         </button>
-        <button className="nav-close modal-close">Lukke</button>
+        <button className="nav-close modal-close">
+          <SVG src={iconClose} className="icon">
+            <img src="yourfallback.jpg" alt="fallback image" />
+          </SVG>
+          <span>Lukk</span>
+        </button>
         <ul className="links links-primary">
           <li>
             <a href="#2">Bestill</a>
