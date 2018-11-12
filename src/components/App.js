@@ -20,6 +20,7 @@ class App extends Component {
   state = {
     travelFrom: null,
     travelTo: null,
+    travelWay: 1,
     step: 1
   };
 
@@ -34,6 +35,11 @@ class App extends Component {
       travelTo: place
     });
   }
+
+  travelWayHandler(e) {
+    this.setState({
+      travelWay: e.target.value
+    });
   }
 
   stepsHandler(step) {
@@ -75,13 +81,29 @@ class App extends Component {
                 defaultID="1"
               />
             </div>
-            <div>
-                {/*  */}
-                {/*  */}
+            <div className="step-1-way">
+              <div>
+                <input
+                  id="travel-way-1"
+                  type="radio"
+                  name="travel-way"
+                  value="1"
+                  defaultChecked
+                  onChange={this.travelWayHandler.bind(this)}
+                />
+                <label htmlFor="travel-way-1">Én vei</label>
+              </div>
+              <div>
+                <input
+                  id="travel-way-2"
+                  type="radio"
+                  name="travel-way"
+                  value="2"
+                  onChange={this.travelWayHandler.bind(this)}
+                />
+                <label htmlFor="travel-way-2">Tur/retur</label>
+              </div>
             </div>
-            <div>
-                {/*  */}
-                {/*  */}
             <div className="step-1-to">
               <h4>Til</h4>
               <Places
