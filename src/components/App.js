@@ -178,6 +178,7 @@ class App extends Component {
                   name="travel-way"
                   value="1"
                   defaultChecked
+                  required
                   onChange={this.travelWayHandler.bind(this)}
                 />
                 <label htmlFor="travel-way-1">Én vei</label>
@@ -188,6 +189,7 @@ class App extends Component {
                   type="radio"
                   name="travel-way"
                   value="2"
+                  required
                   onChange={this.travelWayHandler.bind(this)}
                 />
                 <label htmlFor="travel-way-2">Tur/retur</label>
@@ -213,6 +215,7 @@ class App extends Component {
                   locale="no-NB"
                   showWeekNumbers
                   withPortal
+                  required
                   highlightDates={[
                     { "travel-return-highlight": [this.state.travelReturn] },
                     { "travel-leave-highlight": [this.state.travelLeave] }
@@ -231,6 +234,7 @@ class App extends Component {
                   locale="no-NB"
                   showWeekNumbers
                   withPortal
+                  required
                   highlightDates={[
                     { "travel-return-highlight": [this.state.travelReturn] },
                     { "travel-leave-highlight": [this.state.travelLeave] }
