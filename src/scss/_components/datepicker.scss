@@ -163,6 +163,7 @@
       color: $color-success-dark;
     }
 
+    &--keyboard-selected,
     &:hover,
     &:focus {
       color: $color-primary-dark;
