@@ -67,6 +67,19 @@ a {
   }
 }
 
+table {
+  border-collapse: collapse;
+}
+
+table tr {
+  cursor: pointer;
+
+  &:hover {
+    color: $color-primary-black;
+    background-color: $color-primary;
+  }
+}
+
 .skip-to-link {
   display: block;
   position: fixed;
@@ -94,23 +107,98 @@ a {
   }
 }
 
-table tr {
-  cursor: pointer;
-
-  &:hover {
-    color: $color-primary-black;
-    background-color: $color-primary;
-  }
-}
-
-
 #steps {
+  margin: 0 auto;
+  width: 100%;
+
+  @media screen and (min-width: $size-s) {
+    margin: #{$ratio * 2}em auto;
+  }
+
+  > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: $size-m;
+    max-width: 100%;
+    min-height: calc(100vh - #{$size-nav-height});
+    background-color: $color-light;
+
+    @media screen and (min-width: $size-s) {
+      min-height: auto;
+      height: calc(100vh - #{$size-nav-height} - #{$ratio * 4}em);
+      max-height: $size-m;
+      overflow: auto;
+    }
+
+    .form-header {
+      padding: 0 #{$ratio}em #{$ratio}em;
+      background-color: $color-dark;
+
+      @media screen and (min-height: 600px) {
+        position: sticky;
+        top: $size-nav-height;
+      }
+
+      @media screen and (min-width: $size-s) {
+        position: relative;
+        top: 0;
+        padding: #{$ratio}em;
+      }
+
+      h2 {
+        margin: 0;
+        color: $color-light;
+        font-size: #{$ratio * $ratio}em;
+      }
+
+      h3 {
+        color: $color-gray6;
+        font-size: 1em;
+        font-weight: $font-headings-weight-regular;
+      }
+    }
+
+    .step.active {
+      padding: 0 #{$ratio}em #{$ratio * 4}em;
+      flex-grow: 1;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      position: sticky;
+      bottom: 0;
+      padding: #{$ratio}em;
+      background-color: $color-dark;
+
+      @media screen and (min-width: $size-s) {
+        // position: relative;
+        // bottom: 0;
+        padding: #{$ratio}em;
+      }
+
+      .button-step {
+      }
+    }
+  }
+
   .step {
     display: none;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 
     &.active {
-      display: block;
+      display: flex;
     }
+  }
+
+  #step-1 {
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
   }
 }
 

@@ -11,7 +11,7 @@ class App extends Component {
 
     this.stepsHandler = this.stepsHandler.bind(this);
     this.stepMin = 1;
-    this.stepMax = 6;
+    this.stepMax = 5;
 
     this.defaultNextButtonText = "Neste steg";
     this.defaultPreviousButtonText = "Forrige steg";
@@ -61,84 +61,50 @@ class App extends Component {
   render() {
     return (
       <div id="steps">
-        <h2>Reise</h2>
-        <h3>Step {this.state.step}</h3>
-        <section id="step-1" className="step active">
-          <h4>Hvor vil du dra?</h4>
-          <Destinations handler={this.destinationsHandler} />
-          <StepButton
-            handler={this.stepsHandler}
-            step={this.state.step}
-            direction="next"
-            text={this.defaultNextButtonText}
-          />
-        </section>
-        <section id="step-2" className="step">
-          <h4>Hvor drar du fra?</h4>
-          <Launches />
-          <StepButton
-            handler={this.stepsHandler}
-            step={this.state.step}
-            direction="previous"
-            text={this.defaultPreviousButtonText}
-          />
-          <StepButton
-            handler={this.stepsHandler}
-            step={this.state.step}
-            direction="next"
-            text={this.defaultNextButtonText}
-          />
-        </section>
-        <section id="step-3" className="step">
-          <StepButton
-            handler={this.stepsHandler}
-            step={this.state.step}
-            direction="previous"
-            text={this.defaultPreviousButtonText}
-          />
-          <StepButton
-            handler={this.stepsHandler}
-            step={this.state.step}
-            direction="next"
-            text={this.defaultNextButtonText}
-          />
-        </section>
-        <section id="step-4" className="step">
-          <StepButton
-            handler={this.stepsHandler}
-            step={this.state.step}
-            direction="previous"
-            text={this.defaultPreviousButtonText}
-          />
-          <StepButton
-            handler={this.stepsHandler}
-            step={this.state.step}
-            direction="next"
-            text={this.defaultNextButtonText}
-          />
-        </section>
-        <section id="step-5" className="step">
-          <StepButton
-            handler={this.stepsHandler}
-            step={this.state.step}
-            direction="previous"
-            text={this.defaultPreviousButtonText}
-          />
-          <StepButton
-            handler={this.stepsHandler}
-            step={this.state.step}
-            direction="next"
-            text={this.defaultNextButtonText}
-          />
-        </section>
-        <section id="step-6" className="step">
-          <StepButton
-            handler={this.stepsHandler}
-            step={this.state.step}
-            direction="previous"
-            text={this.defaultPreviousButtonText}
-          />
-        </section>
+        <form action="" method="post">
+          <header className="form-header">
+            <h2>Bestill reise</h2>
+            <h3>
+              Steg {this.state.step} av {this.stepMax}
+            </h3>
+          </header>
+          <section id="step-1" className="step active">
+            <div>
+              <h4>Hvor vil du dra?</h4>
+              <Destinations handler={this.destinationsHandler} />
+            </div>
+            <div>
+              <h4>Hvor drar du fra?</h4>
+              <Launches />
+            </div>
+          </section>
+          <section id="step-2" className="step">
+            <h4>Rakett</h4>
+          </section>
+          <section id="step-3" className="step">
+            <h4>Bagasje</h4>
+          </section>
+          <section id="step-4" className="step">
+            <h4>Oppsummering</h4>
+          </section>
+          <section id="step-5" className="step">
+            <h4>Betaling</h4>
+          </section>
+          <section className="form-actions">
+            <StepButton
+              handler={this.stepsHandler}
+              step={this.state.step}
+              direction="previous"
+              text={this.defaultPreviousButtonText}
+            />
+            <StepButton
+              handler={this.stepsHandler}
+              step={this.state.step}
+              direction="next"
+              text={this.defaultNextButtonText}
+            />
+          </section>
+        </form>
       </div>
     );
   }
