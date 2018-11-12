@@ -3,11 +3,14 @@ import Launches from "./Launches";
 import Places from "./Places";
 import StepButton from "./StepButton";
 import SVG from "react-inlinesvg";
+import DatePicker from "react-datepicker";
+import moment from "moment";
 import iconRocket from "../images/icons/space-rocket-flying.svg";
 import iconRocket2 from "../images/icons/space-rocket-2.svg";
 import iconRocket3 from "../images/icons/space-ship-1.svg";
 import iconRocket4 from "../images/icons/space-rocket-1.svg";
 import "../css/App.css";
+require("../scss/_components/datepicker.scss");
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +33,8 @@ class App extends Component {
       id: 1,
       name: "Economy"
     },
+    travelLeave: moment(),
+    travelReturn: moment().add(14, "days"),
     step: 1
   };
 
@@ -48,6 +53,18 @@ class App extends Component {
   travelWayHandler(e) {
     this.setState({
       travelWay: e.target.value
+    });
+  }
+
+  travelLeaveHandler(date) {
+    this.setState({
+      travelLeave: date
+    });
+  }
+
+  travelReturnHandler(date) {
+    this.setState({
+      travelReturn: date
     });
   }
 
@@ -164,6 +181,43 @@ class App extends Component {
                 defaultID="2"
               />
             </div>
+            <div className="step-1-bottom">
+              <div className="step-1-leave">
+                <label htmlFor="travel-leave">Utreise</label>
+                <DatePicker
+                  id="travel-leave"
+                  name="travel-leave"
+                  selected={this.state.travelLeave}
+                  placeholderText="Velg en dato"
+                  dateFormat="LL"
+                  locale="no-NB"
+                  showWeekNumbers
+                  withPortal
+                  highlightDates={[
+                    { "travel-return-highlight": [this.state.travelReturn] },
+                    { "travel-leave-highlight": [this.state.travelLeave] }
+                  ]}
+                  onChange={this.travelLeaveHandler.bind(this)}
+                />
+              </div>
+              <div className="step-1-return">
+                <label htmlFor="travel-return">Hjemreise</label>
+                <DatePicker
+                  id="travel-return"
+                  name="travel-return"
+                  selected={this.state.travelReturn}
+                  placeholderText="Velg en dato"
+                  dateFormat="LL"
+                  locale="no-NB"
+                  showWeekNumbers
+                  withPortal
+                  highlightDates={[
+                    { "travel-return-highlight": [this.state.travelReturn] },
+                    { "travel-leave-highlight": [this.state.travelLeave] }
+                  ]}
+                  onChange={this.travelReturnHandler.bind(this)}
+                />
+              </div>
             </div>
           </section>
           <section id="step-2" className="step">
