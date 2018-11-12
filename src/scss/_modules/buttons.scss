@@ -25,6 +25,10 @@ a.button,
     background-color: $color-info-dark;
   }
 
+  &:focus {
+    outline: 1px solid $color-primary;
+  }
+
   &.primary {
     color: $color-primary-black;
     border-color: $color-primary;
