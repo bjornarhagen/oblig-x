@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import Launches from "./Launches";
-import Destinations from "./Destinations";
+import Places from "./Places";
 import StepButton from "./StepButton";
 import "../css/App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.destinationsHandler = this.destinationsHandler.bind(this);
+    this.travelFromHandler = this.travelFromHandler.bind(this);
+    this.travelToHandler = this.travelToHandler.bind(this);
 
     this.stepsHandler = this.stepsHandler.bind(this);
     this.stepMin = 1;
@@ -17,25 +18,22 @@ class App extends Component {
     this.defaultPreviousButtonText = "Forrige steg";
   }
   state = {
-    destination: null,
+    travelFrom: null,
+    travelTo: null,
     step: 1
   };
 
-  destinationsHandler(destination) {
-    // If current destination is the same as the new one: Reset the destination
-    // If it's not the same: Update the destination
-    if (
-      this.state.destination != null &&
-      this.state.destination.id === destination.id
-    ) {
-      this.setState({
-        destination: null
-      });
-    } else {
-      this.setState({
-        destination: destination
-      });
-    }
+  travelFromHandler(place) {
+    this.setState({
+      travelFrom: place
+    });
+  }
+
+  travelToHandler(place) {
+    this.setState({
+      travelTo: place
+    });
+  }
   }
 
   stepsHandler(step) {
@@ -69,13 +67,29 @@ class App extends Component {
             </h3>
           </header>
           <section id="step-1" className="step active">
-            <div>
-              <h4>Hvor vil du dra?</h4>
-              <Destinations handler={this.destinationsHandler} />
+            <div className="step-1-from">
+              <h4>Fra</h4>
+              <Places
+                handler={this.travelFromHandler}
+                id="travel-from"
+                defaultID="1"
+              />
             </div>
             <div>
-              <h4>Hvor drar du fra?</h4>
-              <Launches />
+                {/*  */}
+                {/*  */}
+            </div>
+            <div>
+                {/*  */}
+                {/*  */}
+            <div className="step-1-to">
+              <h4>Til</h4>
+              <Places
+                handler={this.travelToHandler}
+                id="travel-to"
+                defaultID="2"
+              />
+            </div>
             </div>
           </section>
           <section id="step-2" className="step">

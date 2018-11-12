@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import axios from "axios";
 require("es6-promise").polyfill();
-require("../scss/_components/destinations.scss");
+require("../scss/_components/places.scss");
 
-class Destinations extends Component {
+class Places extends Component {
   constructor(props) {
     super(props);
 
-    this.getDestinations = this.getDestinations.bind(this);
-    this.setDestination = this.setDestination.bind(this);
+    this.getPlaces = this.getPlaces.bind(this);
+    this.setPlace = this.setPlace.bind(this);
 
-    // Init by getting the destinations
-    this.getDestinations();
+    // Init by getting the places
+    this.getPlaces();
   }
 
   state = {
-    destination: {
-      id: 1,
+    place: {
+      id: this.props.defaultID,
       planet: {
         name: "",
         image: "",
@@ -45,34 +45,34 @@ class Destinations extends Component {
       moons: ["Moon"],
       infoText: []
     },
-    destinations: []
+    places: []
   };
 
-  // Get all destinations from a local JSON file
-  getDestinations() {
-    axios({ method: "get", baseURL: "/data/", url: "destinations.json" })
-      .then(destinations => {
+  // Get all places from a local JSON file
+  getPlaces() {
+    axios({ method: "get", baseURL: "/data/", url: "places.json" })
+      .then(places => {
         this.setState({
-          destination: destinations.data[0],
-          destinations: destinations.data
+          place: places.data[this.props.defaultID - 1],
+          places: places.data
         });
 
-        this.setDestination(this.state.destination);
+        this.setPlace(this.state.place);
       })
       .catch(function(error) {
         console.error(error);
       });
   }
 
-  setDestination(destination) {
-    this.props.handler(destination);
+  setPlace(place) {
+    this.props.handler(place);
 
     this.setState({
-      destination: destination
+      place: place
     });
 
-    const elDestinations = document.querySelector("#destinations");
-    const elPlanetsWrapper = elDestinations.querySelector(".planets-inner");
+    const elPlaces = document.querySelector("#" + this.props.id);
+    const elPlanetsWrapper = elPlaces.querySelector(".planets-inner");
     const elPlanets = elPlanetsWrapper.querySelectorAll(".planet");
 
     // Remove classes from all planets
@@ -82,7 +82,7 @@ class Destinations extends Component {
     }
 
     // Set selected planet
-    const selectedPlanet = elPlanets[destination.id - 1];
+    const selectedPlanet = elPlanets[place.id - 1];
     selectedPlanet.classList.add("selected");
 
     // Set next planet
@@ -106,52 +106,54 @@ class Destinations extends Component {
         <button
           className="modal-trigger"
           type="button"
-          data-target="#destinations"
+          data-target={"#" + this.props.id}
         >
-          {this.state.destination.planet.name}
+          {this.state.place.planet.name}
         </button>
-        <div id="destinations" className="modal">
-          <div className="destinations-inner modal-inner">
+        <input
+          type="hidden"
+          name={this.props.id}
+          value={this.state.place.id}
+          readOnly
+        />
+        <div id={this.props.id} className="places modal">
+          <div className="places-inner modal-inner">
             <div className="planets-outer">
               <div className="planets-inner">
-                {this.state.destinations.map(destination => (
+                {this.state.places.map(place => (
                   <button
                     className="planet"
-                    key={destination.id}
+                    key={place.id}
                     type="button"
-                    onClick={() => this.setDestination(destination)}
-                    aria-label={"Velg " + destination.planet.name}
+                    onClick={() => this.setPlace(place)}
+                    aria-label={"Velg " + place.planet.name}
                   >
-                    <span className="planet-name">
-                      {destination.planet.name}
-                    </span>
+                    <span className="planet-name">{place.planet.name}</span>
                     <img
-                      src={destination.planet.image}
-                      alt={"Bilde av planeten " + destination.planet.name}
+                      src={place.planet.image}
+                      alt={"Bilde av planeten " + place.planet.name}
                     />
                   </button>
                 ))}
               </div>
             </div>
             <div className="planet-info-wrapper">
-              <h5>{this.state.destination.planet.name}</h5>
+              <h5>{this.state.place.planet.name}</h5>
 
               <div className="planet-info">
                 <div className="planet-info-tab planet-general-1">
                   <h6>Informasjon 1</h6>
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: this.state.destination.infoText[0]
+                      __html: this.state.place.infoText[0]
                     }}
                   />
                 </div>
                 <div className="planet-info-tab planet-moons">
                   <h6>Måner</h6>
                   <ul>
-                    {this.state.destination.moons.map(moon => (
-                      <li key={this.state.destination.id + "-" + moon}>
-                        {moon}
-                      </li>
+                    {this.state.place.moons.map(moon => (
+                      <li key={this.state.place.id + "-" + moon}>{moon}</li>
                     ))}
                   </ul>
                 </div>
@@ -166,7 +168,7 @@ class Destinations extends Component {
                         <th>Periode</th>
                         <td>
                           {
-                            this.state.destination.planet.orbitalCharacteristics
+                            this.state.place.planet.orbitalCharacteristics
                               .period
                           }
                         </td>
@@ -174,17 +176,14 @@ class Destinations extends Component {
                       <tr>
                         <th>Hastighet</th>
                         <td>
-                          {
-                            this.state.destination.planet.orbitalCharacteristics
-                              .speed
-                          }
+                          {this.state.place.planet.orbitalCharacteristics.speed}
                         </td>
                       </tr>
                       <tr>
                         <th>Satellitter</th>
                         <td>
                           {
-                            this.state.destination.planet.orbitalCharacteristics
+                            this.state.place.planet.orbitalCharacteristics
                               .satellites
                           }
                         </td>
@@ -196,8 +195,8 @@ class Destinations extends Component {
                         <th>Min</th>
                         <td>
                           {
-                            this.state.destination.planet
-                              .physicalCharacteristics.surfaceTemp.min
+                            this.state.place.planet.physicalCharacteristics
+                              .surfaceTemp.min
                           }
                         </td>
                       </tr>
@@ -205,8 +204,8 @@ class Destinations extends Component {
                         <th>Median</th>
                         <td>
                           {
-                            this.state.destination.planet
-                              .physicalCharacteristics.surfaceTemp.mean
+                            this.state.place.planet.physicalCharacteristics
+                              .surfaceTemp.mean
                           }
                         </td>
                       </tr>
@@ -214,8 +213,8 @@ class Destinations extends Component {
                         <th>Max</th>
                         <td>
                           {
-                            this.state.destination.planet
-                              .physicalCharacteristics.surfaceTemp.max
+                            this.state.place.planet.physicalCharacteristics
+                              .surfaceTemp.max
                           }
                         </td>
                       </tr>
@@ -226,8 +225,8 @@ class Destinations extends Component {
                         <th>Tyndekraft</th>
                         <td>
                           {
-                            this.state.destination.planet
-                              .physicalCharacteristics.gravity
+                            this.state.place.planet.physicalCharacteristics
+                              .gravity
                           }
                         </td>
                       </tr>
@@ -235,8 +234,8 @@ class Destinations extends Component {
                         <th>Areal</th>
                         <td>
                           {
-                            this.state.destination.planet
-                              .physicalCharacteristics.surfaceArea
+                            this.state.place.planet.physicalCharacteristics
+                              .surfaceArea
                           }
                         </td>
                       </tr>
@@ -244,8 +243,8 @@ class Destinations extends Component {
                         <th>Radius</th>
                         <td>
                           {
-                            this.state.destination.planet
-                              .physicalCharacteristics.radius
+                            this.state.place.planet.physicalCharacteristics
+                              .radius
                           }
                         </td>
                       </tr>
@@ -253,18 +252,15 @@ class Destinations extends Component {
                         <th>Volum</th>
                         <td>
                           {
-                            this.state.destination.planet
-                              .physicalCharacteristics.volume
+                            this.state.place.planet.physicalCharacteristics
+                              .volume
                           }
                         </td>
                       </tr>
                       <tr>
                         <th>Masse</th>
                         <td>
-                          {
-                            this.state.destination.planet
-                              .physicalCharacteristics.mass
-                          }
+                          {this.state.place.planet.physicalCharacteristics.mass}
                         </td>
                       </tr>
                       <tr>
@@ -273,10 +269,7 @@ class Destinations extends Component {
                       <tr>
                         <th>Trykk</th>
                         <td>
-                          {
-                            this.state.destination.planet.atmosphere
-                              .surfacePressure
-                          }
+                          {this.state.place.planet.atmosphere.surfacePressure}
                         </td>
                       </tr>
                     </tbody>
@@ -286,7 +279,7 @@ class Destinations extends Component {
                   <h6>Informasjon 2</h6>
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: this.state.destination.infoText[1]
+                      __html: this.state.place.infoText[1]
                     }}
                   />
                 </div>
@@ -307,4 +300,4 @@ class Destinations extends Component {
   }
 }
 
-export default Destinations;
+export default Places;
