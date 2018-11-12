@@ -135,6 +135,8 @@ table tr {
     .form-header {
       padding: 0 #{$ratio}em #{$ratio}em;
       background-color: $color-dark;
+      display: flex;
+      justify-content: space-between;
 
       @media screen and (min-height: 600px) {
         position: sticky;
@@ -157,6 +159,30 @@ table tr {
         color: $color-gray6;
         font-size: 1em;
         font-weight: $font-headings-weight-regular;
+      }
+
+      .form-header-class {
+        color: $color-light;
+        font-size: #{$ratio}em;
+        // padding-top: #{$ratio/2}em;
+
+        .icon {
+          width: #{$ratio}em;
+          height: #{$ratio}em;
+          display: none;
+          vertical-align: middle;
+          margin-right: #{$ratio/2}em;
+
+          svg {
+            width: #{$ratio}em;
+            height: #{$ratio}em;
+            display: inline-block;
+          }
+
+          &.active {
+            display: inline-block;
+          }
+        }
       }
     }
 
@@ -196,9 +222,9 @@ table tr {
   }
 
   #step-1 {
-    justify-content: space-between;
-    align-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-around;
+    // align-content: flex-start;
+    // align-items: flex-start;
   }
 }
 
