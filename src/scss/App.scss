@@ -226,9 +226,77 @@ table tr {
   }
 
   #step-1 {
-    justify-content: space-around;
-    // align-content: flex-start;
-    // align-items: flex-start;
+    width: 100%;
+    justify-self: flex-start;
+    align-content: flex-start;
+    padding: 0;
+    justify-content: space-between;
+    align-items: stretch;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "s1f s1f s1f s1f s1w s1w s1w s1w s1t s1t s1t s1t"
+      "bot bot bot bot bot bot bot bot bot bot bot bot";
+    grid-template-rows: 50% 50%;
+
+    &.active {
+      display: grid;
+    }
+
+    .step-1-from,
+    .step-1-to,
+    .step-1-way {
+      text-align: center;
+    }
+
+    .step-1-from {
+      grid-area: s1f;
+      padding-left: #{$ratio}em;
+    }
+
+    .step-1-to {
+      grid-area: s1t;
+      padding-right: #{$ratio}em;
+    }
+
+    .step-1-way {
+      grid-area: s1w;
+
+      .icon {
+        margin: #{$ratio/2}em auto #{$ratio/4}em;
+        display: block;
+        color: $color-headings;
+        width: #{$ratio * 2}em;
+        height: #{$ratio * 2}em;
+
+        svg {
+          display: block;
+          width: #{$ratio * 2}em;
+          height: #{$ratio * 2}em;
+        }
+      }
+    }
+
+    .step-1-bottom {
+      // align-self: flex-end;
+      display: grid;
+      grid-area: bot;
+      color: $color-accent-white;
+      background-color: $color-accent-black;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      padding: #{$ratio}em;
+      grid-gap: #{$ratio}em;
+      justify-content: space-between;
+      align-content: center;
+      align-items: flex-end;
+
+      label,
+      input,
+      select {
+        display: block;
+        // width: 100%;
+      }
+    }
   }
 }
 
