@@ -28,8 +28,8 @@ class GlobalNavigation extends Component {
         <a className="skip-to-link" href="#footer">
           Skip to footer
         </a>
-        <a href="/">
-          <img src={logo} className="App-logo" alt="SpaceX logo" />
+        <a href="/" className="logo">
+          <img src={logo} alt="SpaceX logo" />
         </a>
         <button className="nav-open modal-trigger" data-target="#nav">
           <SVG src={iconOpen} className="icon">

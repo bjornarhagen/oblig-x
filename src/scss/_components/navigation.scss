@@ -12,6 +12,12 @@
   overflow-y: auto;
   color: $color-accent-white;
   background-color: $color-dark;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: $size-nav-height;
 
   @media screen and (min-width: $size-m) {
     overflow-y: visible;
@@ -22,14 +28,16 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
 
     @media screen and (min-width: $size-m) {
       flex-direction: row;
       position: relative;
       margin: 0 auto;
-      width: 100%;
       max-width: $size-m;
       justify-content: flex-end;
+      align-items: center;
+      align-content: center;
     }
   }
 
@@ -63,6 +71,13 @@
       display: inline-block;
       margin-left: #{$ratio/4}em;
     }
+  }
+
+  .logo {
+    display: flex;
+    max-width: 70%;
+    justify-content: center;
+    align-items: center;
   }
 
   .links {
@@ -206,6 +221,7 @@
   .nav-close {
     color: $color-light;
     border: 0;
+    max-width: 30%;
     background-color: transparent;
 
     @media screen and (min-width: $size-m) {
@@ -215,6 +231,9 @@
 
   &.show {
     z-index: 13;
+    height: auto;
+    align-content: flex-start;
+    align-items: flex-start;
 
     ul {
       display: flex;
