@@ -35,6 +35,9 @@ class App extends Component {
     },
     travelLeave: moment(),
     travelReturn: moment().add(14, "days"),
+    travelPeopleAdults: 0,
+    travelPeopleChildren: 0,
+    travelPeopleInfants: 0,
     step: 1
   };
 
@@ -97,6 +100,23 @@ class App extends Component {
     formHeaderClassActive.classList.add("active");
   }
 
+  travelPeopleAdultsHandler(e) {
+    this.setState({
+      travelPeopleAdults: parseInt(e.target.value)
+    });
+  }
+
+  travelPeopleChildrenHandler(e) {
+    this.setState({
+      travelPeopleChildren: parseInt(e.target.value)
+    });
+  }
+
+  travelPeopleInfantsHandler(e) {
+    this.setState({
+      travelPeopleInfants: parseInt(e.target.value)
+    });
+  }
   stepsHandler(step) {
     if (step < this.stepMin) {
       step = this.stepMin;
@@ -218,6 +238,51 @@ class App extends Component {
                   onChange={this.travelReturnHandler.bind(this)}
                 />
               </div>
+              <div className="step-1-travel_class">
+                <label htmlFor="travel-class">Klasse</label>
+                <select
+                  name="travel-class"
+                  id="travel-class"
+                  defaultValue="1"
+                  required
+                  onChange={this.travelClassHandler.bind(this)}
+                >
+                  <option value="1">Economy</option>
+                  <option value="2">Business</option>
+                  <option value="3">Luxury</option>
+                </select>
+              </div>
+              <div className="step-1-people-adults">
+                <label htmlFor="travel-people-adults">Voksene</label>
+                <input
+                  id="travel-people-adults"
+                  type="number"
+                  placeholder="0"
+                  min="0"
+                  required
+                  onChange={this.travelPeopleAdultsHandler.bind(this)}
+                />
+              </div>
+              <div className="step-1-people-children">
+                <label htmlFor="travel-people-children">Barn</label>
+                <input
+                  id="travel-people-children"
+                  type="number"
+                  placeholder="0"
+                  min="0"
+                  onChange={this.travelPeopleChildrenHandler.bind(this)}
+                />
+              </div>
+              <div className="step-1-people-infants">
+                <label htmlFor="travel-people-infants">Spebarn</label>
+                <input
+                  id="travel-people-infants"
+                  type="number"
+                  placeholder="0"
+                  min="0"
+                  onChange={this.travelPeopleInfantsHandler.bind(this)}
+                />
+              </div>
             </div>
           </section>
           <section id="step-2" className="step">
@@ -228,16 +293,6 @@ class App extends Component {
           </section>
           <section id="step-4" className="step">
             <h4>Oppsummering</h4>
-            <select
-              name="travel-class"
-              id="travel-class"
-              defaultValue="1"
-              onChange={this.travelClassHandler.bind(this)}
-            >
-              <option value="1">Economy</option>
-              <option value="2">Business</option>
-              <option value="3">Luxury</option>
-            </select>
           </section>
           <section id="step-5" className="step">
             <h4>Betaling</h4>
