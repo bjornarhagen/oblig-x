@@ -9,6 +9,7 @@ import iconRocket from "../images/icons/space-rocket-flying.svg";
 import iconRocket2 from "../images/icons/space-rocket-2.svg";
 import iconRocket3 from "../images/icons/space-ship-1.svg";
 import iconRocket4 from "../images/icons/space-rocket-1.svg";
+import iconRocket5 from "../images/icons/space-rocket-earth.svg";
 import "../css/App.css";
 require("../scss/_components/datepicker.scss");
 
@@ -117,6 +118,7 @@ class App extends Component {
       travelPeopleInfants: parseInt(e.target.value)
     });
   }
+
   stepsHandler(step) {
     if (step < this.stepMin) {
       step = this.stepMin;
@@ -171,6 +173,12 @@ class App extends Component {
               />
             </div>
             <div className="step-1-way">
+              <SVG src={iconRocket} className="icon">
+                <img src="yourfallback.jpg" alt="fallback image" />
+              </SVG>
+              <SVG src={iconRocket5} className="icon">
+                <img src="yourfallback.jpg" alt="fallback image" />
+              </SVG>
               <div>
                 <input
                   id="travel-way-1"
