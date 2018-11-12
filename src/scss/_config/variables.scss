@@ -71,9 +71,9 @@ $line-height: $ratio * $ratio * $ratio;
 
 $font-headings-family: ibm-plex-mono, axia, sans-serif;
 $font-headings-weight-bold: 700;
-$font-headings-weight-regular: 700;
-$font-headings-weight-light: 700;
-$font-headings-weight: $font-headings-weight-regular;
+$font-headings-weight-regular: 400;
+$font-headings-weight-light: 400;
+$font-headings-weight: $font-headings-weight-bold;
 
 $font-copy-family: axia, sans-serif;
 $font-copy-weight-bold: 700;
