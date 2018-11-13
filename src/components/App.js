@@ -13,13 +13,62 @@ import iconRocket5 from "../images/icons/space-rocket-earth.svg";
 import "../css/App.css";
 require("../scss/_components/datepicker.scss");
 
-let initalStep = new URL(window.location).searchParams.get("step");
-if (initalStep && !isNaN(initalStep)) {
-  if (initalStep < 1 || initalStep > 5) {
-    initalStep = 1;
+function safeParam(value, type, fallback) {
+  if (value) {
+    if (type === "int") {
+      value = parseInt(value);
+
+      if (isNaN(value)) {
+        return fallback;
+      }
+    }
+  } else {
+    return fallback;
   }
+
+  return value;
+}
+
+const url = new URL(window.location);
+let initStep = safeParam(url.searchParams.get("step"), "int", 1);
+
+let initFrom = safeParam(url.searchParams.get("from"), "int", null);
+let initWay = safeParam(url.searchParams.get("way"), "int", 1);
+let initTo = safeParam(url.searchParams.get("to"), "int", null);
+let initAdults = safeParam(url.searchParams.get("adults"), "int", undefined);
+let initChildren = safeParam(
+  url.searchParams.get("children"),
+  "int",
+  undefined
+);
+let initInfants = safeParam(url.searchParams.get("infants"), "int", undefined);
+let initClassId = safeParam(url.searchParams.get("classID"), "int", 1);
+let initClassName = safeParam(
+  url.searchParams.get("className"),
+  "string",
+  "Economy"
+);
+
+let initLeave = safeParam(url.searchParams.get("leave"), "string", null);
+if (initLeave === null) {
+  initLeave = moment();
 } else {
-  initalStep = 1;
+  initLeave = moment(initLeave);
+
+  if (!initLeave._isValid) {
+    initLeave = moment();
+  }
+}
+
+let initReturn = safeParam(url.searchParams.get("return"), "string", null);
+if (initReturn === null) {
+  initReturn = moment().add(14, "days");
+} else {
+  initReturn = moment(initReturn);
+
+  if (!initReturn._isValid) {
+    initReturn = moment().add(14, "days");
+  }
 }
 
 class App extends Component {
@@ -42,22 +91,28 @@ class App extends Component {
         .querySelector("#step-" + this.state.step)
         .classList.add("active");
     }
+
+    if (this.state.travelWay) {
+      document
+        .querySelector("#travel-way-" + this.state.travelWay)
+        .setAttribute("checked", true);
+    }
   }
 
   state = {
-    travelFrom: null,
-    travelTo: null,
-    travelWay: 1,
+    travelFrom: initFrom,
+    travelTo: initTo,
+    travelWay: initWay,
     travelClass: {
-      id: 1,
-      name: "Economy"
+      id: initClassId,
+      name: initClassName
     },
-    travelLeave: moment(),
-    travelReturn: moment().add(14, "days"),
-    travelPeopleAdults: 0,
-    travelPeopleChildren: 0,
-    travelPeopleInfants: 0,
-    step: initalStep
+    travelLeave: initLeave,
+    travelReturn: initReturn,
+    travelPeopleAdults: initAdults,
+    travelPeopleChildren: initChildren,
+    travelPeopleInfants: initInfants,
+    step: initStep
   };
 
   travelFromHandler(place) {
@@ -150,12 +205,16 @@ class App extends Component {
 
     let url = new URL(window.location);
     url.searchParams.set("step", step);
-    url.searchParams.set("leave", this.state.travelLeave);
+    url.searchParams.set("from", this.state.travelFrom.id);
     url.searchParams.set("way", this.state.travelWay);
+    url.searchParams.set("to", this.state.travelTo.id);
+    url.searchParams.set("leave", this.state.travelLeave);
     url.searchParams.set("return", this.state.travelReturn);
     url.searchParams.set("adults", this.state.travelPeopleAdults);
     url.searchParams.set("children", this.state.travelPeopleChildren);
     url.searchParams.set("infants", this.state.travelPeopleInfants);
+    url.searchParams.set("classID", this.state.travelClass.id);
+    url.searchParams.set("className", this.state.travelClass.name);
     window.history.replaceState(null, null, url);
 
     const elSteps = document.querySelectorAll("#steps .step");
@@ -197,7 +256,7 @@ class App extends Component {
               <Places
                 handler={this.travelFromHandler}
                 id="travel-from"
-                defaultID="1"
+                defaultID={this.state.travelFrom}
               />
             </div>
             <div className="step-1-way">
@@ -207,7 +266,6 @@ class App extends Component {
                   type="radio"
                   name="travel-way"
                   value="1"
-                  defaultChecked
                   required
                   onChange={this.travelWayHandler.bind(this)}
                 />
@@ -240,7 +298,7 @@ class App extends Component {
               <Places
                 handler={this.travelToHandler}
                 id="travel-to"
-                defaultID="2"
+                defaultID={this.state.travelTo}
               />
             </div>
             <div className="step-1-bottom">
@@ -287,7 +345,7 @@ class App extends Component {
                 <select
                   name="travel-class"
                   id="travel-class"
-                  defaultValue="1"
+                  value={this.state.travelClass.id}
                   required
                   onChange={this.travelClassHandler.bind(this)}
                 >
@@ -304,6 +362,7 @@ class App extends Component {
                   placeholder="0"
                   min="0"
                   required
+                  defaultValue={this.state.travelPeopleAdults}
                   onChange={this.travelPeopleAdultsHandler.bind(this)}
                 />
               </div>
@@ -324,12 +383,14 @@ class App extends Component {
                   type="number"
                   placeholder="0"
                   min="0"
+                  defaultValue={this.state.travelPeopleInfants}
                   onChange={this.travelPeopleInfantsHandler.bind(this)}
                 />
               </div>
             </div>
           </section>
           <section id="step-2" className="step">
+            <Launches />
             <h4>Rakett</h4>
           </section>
           <section id="step-3" className="step">
