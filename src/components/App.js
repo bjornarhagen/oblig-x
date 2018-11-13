@@ -258,7 +258,7 @@ class App extends Component {
                 defaultID={this.state.travelFrom}
               />
             </div>
-            <div className="step-1-way">
+            <div className="step-1-way radio-selection">
               <div className="way-selector">
                 <input
                   id="travel-way-1"

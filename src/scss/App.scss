@@ -160,6 +160,66 @@ table.specs {
   }
 }
 
+.radio-selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  color: $color-headings;
+  font-weight: $font-copy-weight-regular;
+
+  label {
+    cursor: pointer;
+    display: inline-block;
+    padding: #{$ratio/2}em #{$ratio}em;
+    margin: #{$ratio/4}em 0;
+    border: 2px solid $color-headings;
+  }
+
+  input {
+    overflow: hidden;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    opacity: 0.01;
+    position: absolute;
+
+    &:hover + label,
+    &:focus + label {
+      color: $color-primary-dark;
+      border-color: $color-primary-dark;
+    }
+
+    &:checked + label {
+      color: $color-primary-black;
+      border-color: $color-primary-black;
+      background-color: $color-primary-white;
+    }
+  }
+
+  .way-selector {
+    white-space: nowrap;
+  }
+
+  @media screen and (min-width: $size-s) {
+    flex-direction: row;
+  }
+
+  .icon {
+    margin-left: #{$ratio/4}em;
+    display: inline-block;
+    width: #{$ratio * $ratio}em;
+    height: #{$ratio * $ratio}em;
+    vertical-align: middle;
+
+    svg {
+      display: block;
+      width: #{$ratio * $ratio}em;
+      height: #{$ratio * $ratio}em;
+    }
+  }
+}
+
 #steps {
   margin: 0 auto;
   width: 100%;
@@ -346,63 +406,6 @@ table.specs {
 
     .step-1-way {
       grid-area: s1w;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      flex-direction: column;
-      color: $color-headings;
-      font-weight: $font-copy-weight-regular;
-
-      label {
-        cursor: pointer;
-        display: inline-block;
-        padding: #{$ratio/2}em #{$ratio}em;
-        margin: #{$ratio/4}em 0;
-        border: 2px solid $color-headings;
-      }
-
-      input {
-        overflow: hidden;
-        margin: -1px;
-        width: 1px;
-        height: 1px;
-        opacity: 0.01;
-        position: absolute;
-
-        &:hover + label,
-        &:focus + label {
-          color: $color-primary-dark;
-          border-color: $color-primary-dark;
-        }
-
-        &:checked + label {
-          color: $color-primary-black;
-          border-color: $color-primary-black;
-          background-color: $color-primary-white;
-        }
-      }
-
-      .way-selector {
-        white-space: nowrap;
-      }
-
-      @media screen and (min-width: $size-s) {
-        flex-direction: row;
-      }
-
-      .icon {
-        margin-left: #{$ratio/4}em;
-        display: inline-block;
-        width: #{$ratio * $ratio}em;
-        height: #{$ratio * $ratio}em;
-        vertical-align: middle;
-
-        svg {
-          display: block;
-          width: #{$ratio * $ratio}em;
-          height: #{$ratio * $ratio}em;
-        }
-      }
     }
 
     .step-1-bottom {
