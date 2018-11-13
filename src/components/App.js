@@ -173,13 +173,7 @@ class App extends Component {
               />
             </div>
             <div className="step-1-way">
-              <SVG src={iconRocket} className="icon">
-                <img src="yourfallback.jpg" alt="fallback image" />
-              </SVG>
-              <SVG src={iconRocket5} className="icon">
-                <img src="yourfallback.jpg" alt="fallback image" />
-              </SVG>
-              <div>
+              <div className="way-selector">
                 <input
                   id="travel-way-1"
                   type="radio"
@@ -189,9 +183,14 @@ class App extends Component {
                   required
                   onChange={this.travelWayHandler.bind(this)}
                 />
-                <label htmlFor="travel-way-1">Én vei</label>
+                <label htmlFor="travel-way-1">
+                  <span>Én vei</span>
+                  <SVG src={iconRocket} className="icon">
+                    <img src="yourfallback.jpg" alt="fallback image" />
+                  </SVG>
+                </label>
               </div>
-              <div>
+              <div className="way-selector">
                 <input
                   id="travel-way-2"
                   type="radio"
@@ -200,7 +199,12 @@ class App extends Component {
                   required
                   onChange={this.travelWayHandler.bind(this)}
                 />
-                <label htmlFor="travel-way-2">Tur/retur</label>
+                <label htmlFor="travel-way-2">
+                  <span>Tur/retur</span>
+                  <SVG src={iconRocket5} className="icon">
+                    <img src="yourfallback.jpg" alt="fallback image" />
+                  </SVG>
+                </label>
               </div>
             </div>
             <div className="step-1-to">
