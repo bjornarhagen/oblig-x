@@ -107,6 +107,7 @@ class Places extends Component {
           className="modal-trigger"
           type="button"
           data-target={"#" + this.props.id}
+          id={"btn-" + this.props.id}
         >
           {this.state.place.planet.name}
         </button>

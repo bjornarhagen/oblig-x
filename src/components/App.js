@@ -193,7 +193,7 @@ class App extends Component {
           </header>
           <section id="step-1" className="step">
             <div className="step-1-from">
-              <h4>Fra</h4>
+              <label htmlFor="btn-travel-from">Fra</label>
               <Places
                 handler={this.travelFromHandler}
                 id="travel-from"
@@ -236,7 +236,7 @@ class App extends Component {
               </div>
             </div>
             <div className="step-1-to">
-              <h4>Til</h4>
+              <label htmlFor="btn-travel-to">Til</label>
               <Places
                 handler={this.travelToHandler}
                 id="travel-to"
