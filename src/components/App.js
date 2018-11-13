@@ -13,6 +13,15 @@ import iconRocket5 from "../images/icons/space-rocket-earth.svg";
 import "../css/App.css";
 require("../scss/_components/datepicker.scss");
 
+let initalStep = new URL(window.location).searchParams.get("step");
+if (initalStep && !isNaN(initalStep)) {
+  if (initalStep < 1 || initalStep > 5) {
+    initalStep = 1;
+  }
+} else {
+  initalStep = 1;
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +35,15 @@ class App extends Component {
     this.defaultNextButtonText = "Neste steg";
     this.defaultPreviousButtonText = "Forrige steg";
   }
+
+  componentDidMount() {
+    if (this.state.step) {
+      document
+        .querySelector("#step-" + this.state.step)
+        .classList.add("active");
+    }
+  }
+
   state = {
     travelFrom: null,
     travelTo: null,
@@ -39,7 +57,7 @@ class App extends Component {
     travelPeopleAdults: 0,
     travelPeopleChildren: 0,
     travelPeopleInfants: 0,
-    step: 1
+    step: initalStep
   };
 
   travelFromHandler(place) {
@@ -129,6 +147,16 @@ class App extends Component {
     this.setState({
       step: step
     });
+
+    let url = new URL(window.location);
+    url.searchParams.set("step", step);
+    url.searchParams.set("leave", this.state.travelLeave);
+    url.searchParams.set("way", this.state.travelWay);
+    url.searchParams.set("return", this.state.travelReturn);
+    url.searchParams.set("adults", this.state.travelPeopleAdults);
+    url.searchParams.set("children", this.state.travelPeopleChildren);
+    url.searchParams.set("infants", this.state.travelPeopleInfants);
+    window.history.replaceState(null, null, url);
 
     const elSteps = document.querySelectorAll("#steps .step");
     for (let i = 0; i < elSteps.length; i++) {
