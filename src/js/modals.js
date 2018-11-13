@@ -46,7 +46,7 @@ function closeModal(evt) {
     // Delete the backdrop
     if (this.backdrop) {
       this.backdrop.removeEventListener("click", closeModal);
-      this.backdrop.parentElement.removeChild(this);
+      this.backdrop.parentElement.removeChild(this.backdrop);
     }
 
     // Remove event listeners for the close modal buttons
