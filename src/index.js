@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./js/polyfill-nodelist-foreach";
+import "./js/polyfill-number-isnan";
 
 import "./css/index.css";
 import App from "./components/App";
