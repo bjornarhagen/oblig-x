@@ -308,6 +308,7 @@ class App extends Component {
                   name="travel-leave"
                   selected={this.state.travelLeave}
                   placeholderText="Velg en dato"
+                  aria-label="Velg en dato for utreise"
                   dateFormat="LL"
                   locale="no-NB"
                   showWeekNumbers
@@ -327,6 +328,7 @@ class App extends Component {
                   name="travel-return"
                   selected={this.state.travelReturn}
                   placeholderText="Velg en dato"
+                  aria-label="Velg en dato for hjemreise"
                   dateFormat="LL"
                   locale="no-NB"
                   showWeekNumbers
