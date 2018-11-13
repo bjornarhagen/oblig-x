@@ -159,41 +159,5 @@
     h6 {
       // padding: 0 #{$ratio/4}em;
     }
-
-    table {
-      width: 100%;
-
-      tr {
-        border-bottom: 1px solid $color-gray7;
-
-        &:last-child {
-          border-bottom: 0;
-        }
-      }
-
-      th,
-      td {
-        font-family: $font-mono-family;
-        font-weight: $font-mono-weight;
-        line-height: 1 + $ratio/4;
-      }
-
-      th {
-        text-align: left;
-        border-right: 1px solid $color-gray7;
-        // padding: #{$ratio/8}em #{$ratio/4}em #{$ratio/8}em #{$ratio}em;
-
-        &:only-child {
-          padding: #{$ratio/4}em 0 #{$ratio/8}em;
-          line-height: $ratio;
-          font-weight: $font-mono-weight-bold;
-        }
-      }
-
-      td {
-        text-align: right;
-        // padding: #{$ratio/8}em #{$ratio/4}em;
-      }
-    }
   }
 }

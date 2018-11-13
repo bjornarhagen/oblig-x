@@ -160,7 +160,7 @@ class Places extends Component {
                 </div>
                 <div className="planet-info-tab planet-specs">
                   <h6>Specs</h6>
-                  <table>
+                  <table className="specs">
                     <tbody>
                       <tr>
                         <th>Bane</th>
