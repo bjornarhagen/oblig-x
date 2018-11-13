@@ -3,4 +3,8 @@
 
 input {
   border-radius: 0;
+
+  &:focus {
+    outline: 2px solid $color-primary;
+  }
 }
