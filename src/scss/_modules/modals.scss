@@ -18,6 +18,7 @@ html.modal-active {
   overflow-y: auto;
   background-color: $color-light;
   z-index: 13;
+  text-align: left;
 
   @media screen and (min-width: $size-l) {
     top: 50%;
@@ -32,7 +33,7 @@ html.modal-active {
     justify-content: flex-end;
     align-content: center;
     align-items: center;
-    padding: #{$ratio}em #{$ratio * 2}em;
+    padding: #{$ratio/2}em #{$ratio * 2}em;
     background-color: $color-bg;
 
     button,
