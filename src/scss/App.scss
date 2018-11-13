@@ -459,6 +459,34 @@ table.specs {
       }
     }
   }
+
+  #step-2 {
+    flex-direction: column;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      .rocket-select-image {
+        width: 10em;
+      }
+
+      h5 {
+        margin-top: 0.5em;
+      }
+
+      button {
+        &:last-child {
+          margin-left: 0.5em;
+        }
+      }
+
+      li {
+        margin-bottom: 2em;
+      }
+    }
+  }
 }
 
 @import "_modules/typography.scss";
