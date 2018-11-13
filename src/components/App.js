@@ -191,7 +191,7 @@ class App extends Component {
               <span>{this.state.travelClass.name}</span>
             </div>
           </header>
-          <section id="step-1" className="step active">
+          <section id="step-1" className="step">
             <div className="step-1-from">
               <h4>Fra</h4>
               <Places
