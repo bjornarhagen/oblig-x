@@ -374,6 +374,7 @@ class App extends Component {
                   type="number"
                   placeholder="0"
                   min="0"
+                  defaultValue={this.state.travelPeopleChildren}
                   onChange={this.travelPeopleChildrenHandler.bind(this)}
                 />
               </div>
