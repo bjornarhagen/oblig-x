@@ -6,6 +6,7 @@ import StepButton from "./StepButton";
 import SVG from "react-inlinesvg";
 import DatePicker from "react-datepicker";
 import moment from "moment";
+
 import iconRocket from "../images/icons/space-rocket-flying.svg";
 import iconRocket2 from "../images/icons/space-rocket-2.svg";
 import iconRocket3 from "../images/icons/space-ship-1.svg";
@@ -228,7 +229,7 @@ class App extends Component {
   render() {
     return (
       <div id="steps">
-        <form action="" method="post">
+        <form action="/" method="get">
           <header className="form-header">
             <div className="form-header-text">
               <h2>Bestill reise</h2>
