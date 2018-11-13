@@ -18,7 +18,7 @@ class StepButton extends Component {
   render() {
     return (
       <button
-        className="continue"
+        className="button-step light"
         type="button"
         onClick={() => {
           if (this.props.direction === "previous") {
