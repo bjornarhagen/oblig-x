@@ -17,7 +17,7 @@ function openModal(evt) {
     backdrop.addEventListener("click", closeModal);
 
     // Close modal when clicking an element with the modal-close class
-    const modalClosers = modal.querySelectorAll("modal-close");
+    const modalClosers = modal.querySelectorAll(".modal-close");
     modalClosers.forEach(modalCloser => {
       modalCloser.modal = modal;
       modalCloser.backdrop = backdrop;

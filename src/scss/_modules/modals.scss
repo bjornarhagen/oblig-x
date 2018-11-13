@@ -34,6 +34,13 @@ html.modal-active {
     align-items: center;
     padding: #{$ratio}em #{$ratio * 2}em;
     background-color: $color-bg;
+
+    button,
+    .button {
+      &:nth-child(n + 1) {
+        margin-left: #{$ratio}em;
+      }
+    }
   }
 
   &.show {
