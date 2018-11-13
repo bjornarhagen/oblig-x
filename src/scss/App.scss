@@ -25,6 +25,16 @@ body {
   }
 }
 
+
+#footer {
+  padding: #{$ratio * 2}em #{$ratio}em;
+  background-color: $color-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
 a {
   @include transition("color", 250ms);
   position: relative;
