@@ -33,9 +33,9 @@ function safeParam(value, type, fallback) {
 const url = new URL(window.location);
 let initStep = safeParam(url.searchParams.get("step"), "int", 1);
 
-let initFrom = safeParam(url.searchParams.get("from"), "int", null);
+let initFrom = safeParam(url.searchParams.get("from"), "int", 1);
 let initWay = safeParam(url.searchParams.get("way"), "int", 1);
-let initTo = safeParam(url.searchParams.get("to"), "int", null);
+let initTo = safeParam(url.searchParams.get("to"), "int", 2);
 let initAdults = safeParam(url.searchParams.get("adults"), "int", undefined);
 let initChildren = safeParam(
   url.searchParams.get("children"),
@@ -161,8 +161,6 @@ class App extends Component {
   }
 
   travelClassUpdate() {
-    console.log(this.state.travelClass);
-
     const formHeaderClass = document.querySelector(".form-header-class");
     const formHeaderClassActive = document.querySelector(
       ".icon." + this.state.travelClass.name
