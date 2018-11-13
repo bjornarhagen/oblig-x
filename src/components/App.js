@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Launches from "./Launches";
+import Rockets from "./Rockets";
 import Places from "./Places";
 import StepButton from "./StepButton";
 import SVG from "react-inlinesvg";
@@ -390,8 +391,8 @@ class App extends Component {
             </div>
           </section>
           <section id="step-2" className="step">
-            <Launches />
-            <h4>Rakett</h4>
+            <h4>Velg rakett</h4>
+            <Rockets />
           </section>
           <section id="step-3" className="step">
             <h4>Bagasje</h4>

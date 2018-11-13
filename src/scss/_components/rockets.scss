@@ -1,0 +1,25 @@
+@import "../_config/variables.scss";
+@import "../_config/mixins.scss";
+
+.rocketcontent {
+  .rocket-header {
+    img {
+      width: 100%;
+    }
+  }
+
+  .rocket-content {
+    padding: #{$ratio/2}em #{$ratio * 2}em #{$ratio}em;
+  }
+
+  .rocket-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: #{$ratio/2}em;
+    align-items: center;
+
+    @media screen and (min-width: $size-s) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
