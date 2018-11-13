@@ -42,6 +42,19 @@ a.button,
     }
   }
 
+  &.light {
+    color: $color-dark;
+    border-color: $color-light;
+    background-color: $color-light;
+
+    &:hover,
+    &:focus {
+      color: $color-light;
+      border-color: $color-light;
+      background-color: $color-dark;
+    }
+  }
+
   &.success {
     color: $color-success-black;
     border-color: $color-success;
