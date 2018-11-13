@@ -145,10 +145,10 @@ table tr {
 
     @media screen and (min-width: $size-s) {
       min-height: auto;
-      height: calc(100vh - #{$size-nav-height} - #{$ratio * 4}em);
-      height: auto;
+      // height: calc(100vh - #{$size-nav-height} - #{$ratio * 4}em);
+      // height: auto;
       max-height: $size-m;
-      max-height: auto;
+      // max-height: auto;
       overflow-y: auto;
     }
 
@@ -247,12 +247,20 @@ table tr {
     align-content: flex-start;
     padding: 0;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
-      "s1f s1f s1f s1f s1w s1w s1w s1w s1t s1t s1t s1t"
+      "s1f s1f s1f s1f s1f s1f s1f s1f s1f s1f s1f s1f"
+      "s1w s1w s1w s1w s1w s1w s1w s1w s1w s1w s1w s1w"
+      "s1t s1t s1t s1t s1t s1t s1t s1t s1t s1t s1t s1t"
       "bot bot bot bot bot bot bot bot bot bot bot bot";
-    grid-template-rows: 40% 60%;
+    grid-template-rows: 1fr 1fr;
+
+    @media screen and (min-width: $size-s) {
+      grid-template-areas:
+        "s1f s1f s1f s1f s1w s1w s1w s1w s1t s1t s1t s1t"
+        "bot bot bot bot bot bot bot bot bot bot bot bot";
+    }
 
     &.active {
       display: grid;
@@ -260,25 +268,41 @@ table tr {
 
     .step-1-from,
     .step-1-to,
-    .step-1-way,
-    .step-1-bottom {
-    }
-
-    .step-1-from,
-    .step-1-to,
     .step-1-way {
       overflow: hidden;
       text-align: center;
+      padding: #{$ratio}em;
+
+      @media screen and (min-width: $size-s) {
+        padding: #{$ratio}em 0;
+      }
+    }
+
+    .step-1-from,
+    .step-1-to {
+      label {
+        display: block;
+      }
+
+      button {
+        // background-color: $color-light;
+      }
     }
 
     .step-1-from {
       grid-area: s1f;
-      padding-left: #{$ratio}em;
+
+      @media screen and (min-width: $size-s) {
+        padding-left: #{$ratio}em;
+      }
     }
 
     .step-1-to {
       grid-area: s1t;
-      padding-right: #{$ratio}em;
+
+      @media screen and (min-width: $size-s) {
+        padding-right: #{$ratio}em;
+      }
     }
 
     .step-1-way {
@@ -345,8 +369,8 @@ table tr {
     .step-1-bottom {
       display: grid;
       grid-area: bot;
-      color: $color-success-black;
-      background-color: $color-success-white;
+      color: $color-primary-black;
+      background-color: $color-primary-white;
       grid-template-columns: 1fr;
       grid-template-rows: auto;
       padding: #{$ratio}em;
@@ -354,6 +378,7 @@ table tr {
       justify-content: space-between;
       align-content: center;
       align-items: flex-end;
+      overflow: hidden;
 
       @media screen and (min-width: $size-s) {
         grid-template-columns: repeat(3, 1fr);
@@ -377,17 +402,17 @@ table tr {
       input,
       select {
         padding: #{$ratio/4}em #{$ratio/2}em;
-        color: $color-success-black;
-        background-color: $color-success-white;
+        color: $color-primary-black;
+        background-color: $color-primary-white;
       }
 
       input {
         border: 0;
-        border-bottom: 2px solid $color-success-dark;
+        border-bottom: 2px solid $color-primary-dark;
       }
 
       select {
-        border: 2px solid $color-success-dark;
+        border: 2px solid $color-primary-dark;
         min-width: 65%;
       }
     }
