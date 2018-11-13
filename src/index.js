@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 
 import "./js/polyfill-nodelist-foreach";
 import "./js/polyfill-number-isnan";
+import "./js/polyfill-object-includes";
+import "./js/polyfill-url";
 
 import "./css/index.css";
 import App from "./components/App";
