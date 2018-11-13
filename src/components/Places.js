@@ -288,9 +288,6 @@ class Places extends Component {
             </div>
           </div>
           <div className="modal-footer">
-            <button className="modal-close" type="button">
-              Lukk
-            </button>
             <button className="modal-close success" type="button">
               Ok
             </button>
