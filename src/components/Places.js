@@ -122,12 +122,11 @@ class Places extends Component {
             <div className="planets-outer">
               <div className="planets-inner">
                 {this.state.places.map(place => (
-                  <div
+                  <button
                     className="planet"
                     key={place.id}
-                    role="button"
+                    type="button"
                     onClick={() => this.setPlace(place)}
-                    tabIndex="0"
                     aria-label={"Velg " + place.planet.name}
                   >
                     <span className="planet-name">{place.planet.name}</span>
@@ -135,7 +134,7 @@ class Places extends Component {
                       src={place.planet.image}
                       alt={"Bilde av planeten " + place.planet.name}
                     />
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
