@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import SVG from "react-inlinesvg";
+import openModal from "../js/modals";
 
 import logo from "../images/logo.svg";
 import iconUser from "../images/icons/space-astronaut.svg";
@@ -31,7 +32,11 @@ class GlobalNavigation extends Component {
         <a href="/" className="logo">
           <img src={logo} alt="SpaceX logo" />
         </a>
-        <button className="nav-open modal-trigger" data-target="#nav">
+        <button
+          className="nav-open modal-trigger"
+          onClick={openModal.bind(this)}
+          data-target="#nav"
+        >
           <SVG src={iconOpen} className="icon">
             <img
               src="/images/icons/navigation-menu.png"

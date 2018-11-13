@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import RocketContent from "./RocketContent";
+import openModal from "../js/modals";
 require("../js/api.js");
 
 class Rockets extends Component {
@@ -51,6 +52,7 @@ class Rockets extends Component {
             <button
               className="modal-trigger"
               type="button"
+              onClick={openModal.bind(this)}
               data-target={"#rocket-" + rocket.id}
             >
               Les mer

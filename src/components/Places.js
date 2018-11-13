@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import openModal from "../js/modals";
 require("es6-promise").polyfill();
 require("../scss/_components/places.scss");
 
@@ -107,6 +108,7 @@ class Places extends Component {
           className="modal-trigger"
           type="button"
           data-target={"#" + this.props.id}
+          onClick={openModal.bind(this)}
           id={"btn-" + this.props.id}
         >
           {this.state.place.planet.name}

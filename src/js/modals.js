@@ -1,66 +1,59 @@
-window.addEventListener("load", function() {
-  const modalTriggers = document.querySelectorAll(".modal-trigger");
+export function openModal(evt) {
+  evt.preventDefault();
 
-  console.log(modalTriggers);
+  const modal = document.querySelector(evt.target.getAttribute("data-target"));
 
-  modalTriggers.forEach(modalTrigger => {
-    modalTrigger.addEventListener("click", openModal);
-  });
+  if (modal) {
+    // Create a backdrop
+    let backdrop = document.createElement("div");
+    backdrop.classList.add("backdrop");
+    backdrop.modal = modal;
+    backdrop.backdrop = backdrop;
+    backdrop.addEventListener("click", closeModal);
 
-  function openModal(evt) {
-    evt.preventDefault();
-    const modal = document.querySelector(this.getAttribute("data-target"));
+    // Close modal when clicking an element with the modal-close class
+    const modalClosers = modal.querySelectorAll(".modal-close");
+    modalClosers.forEach(modalCloser => {
+      modalCloser.modal = modal;
+      modalCloser.backdrop = backdrop;
+      modalCloser.addEventListener("click", closeModal);
+    });
 
-    if (modal) {
-      // Create a backdrop
-      let backdrop = document.createElement("div");
-      backdrop.classList.add("backdrop");
-      backdrop.modal = modal;
-      backdrop.backdrop = backdrop;
-      backdrop.addEventListener("click", closeModal);
+    // Show the modal
+    modal.classList.add("show");
+    document.documentElement.appendChild(backdrop);
+    document.documentElement.classList.add("modal-active");
 
-      // Close modal when clicking an element with the modal-close class
-      const modalClosers = modal.querySelectorAll(".modal-close");
-      modalClosers.forEach(modalCloser => {
-        modalCloser.modal = modal;
-        modalCloser.backdrop = backdrop;
-        modalCloser.addEventListener("click", closeModal);
-      });
-
-      // Show the modal
-      modal.classList.add("show");
-      document.documentElement.appendChild(backdrop);
-      document.documentElement.classList.add("modal-active");
-
-      return true;
-    }
-
-    return false;
+    return true;
   }
 
-  function closeModal(evt) {
-    evt.preventDefault();
+  return false;
+}
 
-    if (this.modal) {
-      // Hide the modal
-      this.modal.classList.remove("show");
-      document.documentElement.classList.remove("modal-active");
+function closeModal(evt) {
+  evt.preventDefault();
 
-      // Delete the backdrop
-      if (this.backdrop) {
-        this.backdrop.removeEventListener("click", closeModal);
-        this.backdrop.parentElement.removeChild(this.backdrop);
-      }
+  if (this.modal) {
+    // Hide the modal
+    this.modal.classList.remove("show");
+    document.documentElement.classList.remove("modal-active");
 
-      // Remove event listeners for the close modal buttons
-      const modalClosers = this.modal.querySelectorAll("modal-close");
-      modalClosers.forEach(modalCloser => {
-        modalCloser.removeEventListener("click", closeModal);
-      });
-
-      return true;
+    // Delete the backdrop
+    if (this.backdrop) {
+      this.backdrop.removeEventListener("click", closeModal);
+      this.backdrop.parentElement.removeChild(this.backdrop);
     }
 
-    return false;
+    // Remove event listeners for the close modal buttons
+    const modalClosers = this.modal.querySelectorAll("modal-close");
+    modalClosers.forEach(modalCloser => {
+      modalCloser.removeEventListener("click", closeModal);
+    });
+
+    return true;
   }
-});
+
+  return false;
+}
+
+export default openModal;
