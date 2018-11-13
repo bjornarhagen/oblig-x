@@ -127,6 +127,7 @@ class Places extends Component {
                     key={place.id}
                     role="button"
                     onClick={() => this.setPlace(place)}
+                    tabIndex="0"
                     aria-label={"Velg " + place.planet.name}
                   >
                     <span className="planet-name">{place.planet.name}</span>
