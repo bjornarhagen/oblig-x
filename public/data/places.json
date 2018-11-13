@@ -5,24 +5,24 @@
       "name": "Earth",
       "image": "/images/planets/earth.svg",
       "orbitalCharacteristics": {
-        "period": "",
-        "speed": "",
-        "Satellites": ""
+        "period": "365 d",
+        "speed": "29.78 km/s",
+        "Satellites": "16 000"
       },
       "physicalCharacteristics": {
         "surfaceTemp": {
-          "min": "",
-          "mean": "",
-          "max": ""
+          "min": "−89 °C",
+          "mean": "15 °C",
+          "max": "57 °C"
         },
-        "gravity": 1,
-        "surfaceArea": "",
-        "radius": "",
-        "volume": "",
-        "mass": ""
+        "gravity": "1 G",
+        "surfaceArea": "510072000 km2",
+        "radius": "1 Earths",
+        "volume": "1.08321×10^12 km3",
+        "mass": "6.4171×10^23 kg"
       },
       "atmosphere": {
-        "surfacePressure": ""
+        "surfacePressure": "101.325 kPa"
       }
     },
     "launchpads": [],
@@ -38,7 +38,7 @@
       "name": "Mars",
       "image": "/images/planets/mars.svg",
       "orbitalCharacteristics": {
-        "period": "686.971 d",
+        "period": "687 d",
         "speed": "24.007 km/s",
         "Satellites": "2"
       },
@@ -51,8 +51,8 @@
         "gravity": "0.376 G",
         "surfaceArea": "144798500 km2",
         "radius": "0.533 Earths",
-        "volume": "1.6318×1011 km3",
-        "mass": "6.4171×1023 kg"
+        "volume": "1.6318×10^11 km3",
+        "mass": "6.4171×10^23 kg"
       },
       "atmosphere": {
         "surfacePressure": "0.636 kPa"
@@ -71,24 +71,24 @@
       "name": "Jupiter",
       "image": "/images/planets/jupiter.svg",
       "orbitalCharacteristics": {
-        "period": "",
-        "speed": "",
-        "Satellites": ""
+        "period": "687 d",
+        "speed": "24.007 km/s",
+        "Satellites": "2"
       },
       "physicalCharacteristics": {
         "surfaceTemp": {
-          "min": "",
-          "mean": "",
-          "max": ""
+          "min": "−143 °C",
+          "mean": "−63 °C",
+          "max": "35 °C"
         },
-        "gravity": 1,
-        "surfaceArea": "",
-        "radius": "",
-        "volume": "",
-        "mass": ""
+        "gravity": "0.376 G",
+        "surfaceArea": "144798500 km2",
+        "radius": "0.533 Earths",
+        "volume": "1.6318×10^11 km3",
+        "mass": "6.4171×10^23 kg"
       },
       "atmosphere": {
-        "surfacePressure": ""
+        "surfacePressure": "0.636 kPa"
       }
     },
     "launchpads": ["Ipsum", "Dolor sit", "Amet", "Lorem"],
@@ -104,24 +104,24 @@
       "name": "Uranus",
       "image": "/images/planets/uranus.svg",
       "orbitalCharacteristics": {
-        "period": "",
-        "speed": "",
-        "Satellites": ""
+        "period": "687 d",
+        "speed": "24.007 km/s",
+        "Satellites": "2"
       },
       "physicalCharacteristics": {
         "surfaceTemp": {
-          "min": "",
-          "mean": "",
-          "max": ""
+          "min": "−143 °C",
+          "mean": "−63 °C",
+          "max": "35 °C"
         },
-        "gravity": 1,
-        "surfaceArea": "",
-        "radius": "",
-        "volume": "",
-        "mass": ""
+        "gravity": "0.376 G",
+        "surfaceArea": "144798500 km2",
+        "radius": "0.533 Earths",
+        "volume": "1.6318×10^11 km3",
+        "mass": "6.4171×10^23 kg"
       },
       "atmosphere": {
-        "surfacePressure": ""
+        "surfacePressure": "0.636 kPa"
       }
     },
     "launchpads": ["Dolor sit", "Amet", "Lorem", "Ipsum"],
@@ -137,24 +137,24 @@
       "name": "Saturn",
       "image": "/images/planets/saturn.svg",
       "orbitalCharacteristics": {
-        "period": "",
-        "speed": "",
-        "Satellites": ""
+        "period": "687 d",
+        "speed": "24.007 km/s",
+        "Satellites": "2"
       },
       "physicalCharacteristics": {
         "surfaceTemp": {
-          "min": "",
-          "mean": "",
-          "max": ""
+          "min": "−143 °C",
+          "mean": "−63 °C",
+          "max": "35 °C"
         },
-        "gravity": 1,
-        "surfaceArea": "",
-        "radius": "",
-        "volume": "",
-        "mass": ""
+        "gravity": "0.376 G",
+        "surfaceArea": "144798500 km2",
+        "radius": "0.533 Earths",
+        "volume": "1.6318×10^11 km3",
+        "mass": "6.4171×10^23 kg"
       },
       "atmosphere": {
-        "surfacePressure": ""
+        "surfacePressure": "0.636 kPa"
       }
     },
     "launchpads": ["Amet", "Lorem", "Ipsum", "Dolor sit"],
