@@ -121,10 +121,10 @@ class Places extends Component {
             <div className="planets-outer">
               <div className="planets-inner">
                 {this.state.places.map(place => (
-                  <button
+                  <div
                     className="planet"
                     key={place.id}
-                    type="button"
+                    role="button"
                     onClick={() => this.setPlace(place)}
                     aria-label={"Velg " + place.planet.name}
                   >
@@ -133,7 +133,7 @@ class Places extends Component {
                       src={place.planet.image}
                       alt={"Bilde av planeten " + place.planet.name}
                     />
-                  </button>
+                  </div>
                 ))}
               </div>
             </div>
