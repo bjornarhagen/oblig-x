@@ -25,7 +25,6 @@ body {
   }
 }
 
-
 #footer {
   padding: #{$ratio * 2}em #{$ratio}em;
   background-color: $color-light;
@@ -243,11 +242,7 @@ table.specs {
     background-color: $color-light;
 
     @media screen and (min-width: $size-s) {
-      min-height: auto;
-      // height: calc(100vh - #{$size-nav-height} - #{$ratio * 4}em);
-      // height: auto;
-      max-height: $size-m;
-      // max-height: auto;
+      min-height: unset;
       overflow-y: auto;
     }
 
