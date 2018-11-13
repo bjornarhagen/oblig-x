@@ -36,9 +36,22 @@ a.button,
 
     &:hover,
     &:focus {
-      color: $color-primary;
-      border-color: $color-primary;
-      background-color: rgba($color-primary-black, 0.5);
+      color: $color-primary-white;
+      border-color: $color-primary-dark;
+      background-color: $color-primary-dark;
+    }
+  }
+
+  &.success {
+    color: $color-success-black;
+    border-color: $color-success;
+    background-color: $color-success;
+
+    &:hover,
+    &:focus {
+      color: $color-success-white;
+      border-color: $color-success-dark;
+      background-color: $color-success-dark;
     }
   }
 }
