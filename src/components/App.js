@@ -238,13 +238,22 @@ class App extends Component {
             </div>
             <div className="form-header-class">
               <SVG src={iconRocket3} className="icon Economy active">
-                <img src="yourfallback.jpg" alt="fallback image" />
+                <img
+                  src="/images/icons/space-ship-1.png"
+                  alt="Ikon for reiseklasse - Economy"
+                />
               </SVG>
               <SVG src={iconRocket4} className="icon Business">
-                <img src="yourfallback.jpg" alt="fallback image" />
+                <img
+                  src="/images/icons/space-rocket-1.png"
+                  alt="Ikon for reiseklasse - Business"
+                />
               </SVG>
               <SVG src={iconRocket2} className="icon Luxury">
-                <img src="yourfallback.jpg" alt="fallback image" />
+                <img
+                  src="/images/icons/space-rocket-2.png"
+                  alt="Ikon for reiseklasse - Luxury"
+                />
               </SVG>
               <span>{this.state.travelClass.name}</span>
             </div>
@@ -271,7 +280,10 @@ class App extends Component {
                 <label htmlFor="travel-way-1">
                   <span>Én vei</span>
                   <SVG src={iconRocket} className="icon">
-                    <img src="yourfallback.jpg" alt="fallback image" />
+                    <img
+                      src="/images/icons/space-rocket-flying.jpg"
+                      alt="Ikon for én vei"
+                    />
                   </SVG>
                 </label>
               </div>
@@ -287,7 +299,10 @@ class App extends Component {
                 <label htmlFor="travel-way-2">
                   <span>Tur/retur</span>
                   <SVG src={iconRocket5} className="icon">
-                    <img src="yourfallback.jpg" alt="fallback image" />
+                    <img
+                      src="/images/icons/space-rocket-earth.jpg"
+                      alt="Ikon for tur/retur"
+                    />
                   </SVG>
                 </label>
               </div>

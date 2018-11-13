@@ -33,13 +33,16 @@ class GlobalNavigation extends Component {
         </a>
         <button className="nav-open modal-trigger" data-target="#nav">
           <SVG src={iconOpen} className="icon">
-            <img src="yourfallback.jpg" alt="fallback image" />
+            <img
+              src="/images/icons/navigation-menu.png"
+              alt="Meny ikon - åpne"
+            />
           </SVG>
           <span>Åpne</span>
         </button>
         <button className="nav-close modal-close">
           <SVG src={iconClose} className="icon">
-            <img src="yourfallback.jpg" alt="fallback image" />
+            <img src="/images/icons/remove.png" alt="Meny ikon - lukk" />
           </SVG>
           <span>Lukk</span>
         </button>
@@ -50,7 +53,10 @@ class GlobalNavigation extends Component {
               <li>
                 <a href="#" className="text">
                   <SVG src={iconRocket3} className="icon">
-                    <img src="yourfallback.jpg" alt="fallback image" />
+                    <img
+                      src="/images/icons/space-ship-1.png"
+                      alt="Ikon for reiseklasse - Economy"
+                    />
                   </SVG>
                   <span>Economy</span>
                 </a>
@@ -69,7 +75,10 @@ class GlobalNavigation extends Component {
               <li>
                 <a href="#" className="text">
                   <SVG src={iconRocket4} className="icon">
-                    <img src="yourfallback.jpg" alt="fallback image" />
+                    <img
+                      src="/images/icons/space-rocket-1.png"
+                      alt="Ikon for reiseklasse - Business"
+                    />
                   </SVG>
                   <span>Business</span>
                 </a>
@@ -85,7 +94,10 @@ class GlobalNavigation extends Component {
               <li>
                 <a href="#" className="text">
                   <SVG src={iconRocket2} className="icon">
-                    <img src="yourfallback.jpg" alt="fallback image" />
+                    <img
+                      src="/images/icons/space-rocket-2.png"
+                      alt="Ikon for reiseklasse - Luxury"
+                    />
                   </SVG>
                   <span>Luxury</span>
                 </a>
@@ -106,7 +118,7 @@ class GlobalNavigation extends Component {
               <li>
                 <a href="#" className="text">
                   <SVG src={iconBaggage} className="icon">
-                    <img src="yourfallback.jpg" alt="fallback image" />
+                    <img src="/images/icons/baggage.png" alt="Bagasje ikon" />
                   </SVG>
                   <span>Bagasje</span>
                 </a>
@@ -128,7 +140,10 @@ class GlobalNavigation extends Component {
               <li>
                 <a href="#" className="text">
                   <SVG src={iconSpaceport} className="icon">
-                    <img src="yourfallback.jpg" alt="fallback image" />
+                    <img
+                      src="/images/icons/space-rocket-launch.png"
+                      alt="Romhavn ikon"
+                    />
                   </SVG>
                   <span>På romhavnen</span>
                 </a>
@@ -147,7 +162,10 @@ class GlobalNavigation extends Component {
               <li>
                 <a href="#" className="text">
                   <SVG src={iconSeatedPerson} className="icon">
-                    <img src="yourfallback.jpg" alt="fallback image" />
+                    <img
+                      src="/images/icons/seat-regular.png"
+                      alt="Person som sitter og ser ut vindu"
+                    />
                   </SVG>
                   <span>Om bord</span>
                 </a>
@@ -195,7 +213,10 @@ class GlobalNavigation extends Component {
             <a href="#">
               <span>Min konto</span>
               <SVG src={iconUser} className="icon">
-                <img src="yourfallback.jpg" alt="fallback image" />
+                <img
+                  src="/images/icons/space-astronaut.svg"
+                  alt="Profil ikon - en astronaut"
+                />
               </SVG>
             </a>
 
@@ -205,7 +226,10 @@ class GlobalNavigation extends Component {
                   <li>
                     <a href="#">
                       <SVG src={iconTicket} className="icon">
-                        <img src="yourfallback.jpg" alt="fallback image" />
+                        <img
+                          src="/images/icons/ticket-hold.png"
+                          alt="Ikon av hånd som holder biletter"
+                        />
                       </SVG>
                       <span>Bestillinger</span>
                     </a>
@@ -213,7 +237,10 @@ class GlobalNavigation extends Component {
                   <li>
                     <a href="#">
                       <SVG src={iconLogin} className="icon">
-                        <img src="yourfallback.jpg" alt="fallback image" />
+                        <img
+                          src="/images/icons/login-key.png"
+                          alt="Ikon av nøkler"
+                        />
                       </SVG>
                       <span>Logg inn</span>
                     </a>
